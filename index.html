@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/menu.css">
+    <link rel="stylesheet" href="Styles/containers.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Навчальна платформа</title>
+</head>
+<body>
+    <main>
+        <button class="subject-card history">
+            <img src="Image/history-icon.webp" alt="history-icon">
+            <p>Історія України</p>
+        </button>
+        <button class="subject-card physics">
+            <img src="Image/physics-icon.webp" alt="physics-icon">
+            <p>Фізика</p>
+        </button>
+
+        <div class="container history-container">
+            <header class="nav">
+                <button class="btn close-btn">
+                    <div class="close-container">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </button>
+                <button class="btn history-list-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9"
+                            stroke="rgb(230, 230, 230)"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="list history-list"></div>
+            </header>
+        </div>
+
+        <div class="container physics-container">
+            <header class="nav">
+                <button class="btn close-btn">
+                    <div class="close-container">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </button>
+                <button class="btn physics-list-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9L12 15L18 9"
+                            stroke="rgb(230, 230, 230)"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="list physics-list"></div>
+            </header>
+        </div>
+    </main>
+</body>
+<script type="module" src="Js/index.js"></script>
+</html>

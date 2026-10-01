@@ -1,0 +1,30 @@
+const historyListBtn = document.querySelector('.history-list-btn')
+const historyList = document.querySelector('.history-list')
+const physicsListBtn = document.querySelector('.physics-list-btn')
+const physicsList = document.querySelector('.physics-list')
+
+export default function openAndCloseList() {
+    if (!historyList || !historyListBtn || !physicsList || !physicsListBtn) return;
+
+    historyListBtn.addEventListener('click', (event) => {
+        event.stopPropagation(); 
+        historyList.classList.toggle('is-active');
+    });
+
+    physicsListBtn.addEventListener('click', (event) => {
+        event.stopPropagation();
+        physicsList.classList.toggle('is-active');
+    });
+
+    document.addEventListener('click', (event) => {
+        const target = event.target;
+
+        if (historyList.classList.contains('is-active') && !target.closest('.history-list')) {
+            historyList.classList.remove('is-active');
+        }
+
+        if (physicsList.classList.contains('is-active') && !target.closest('.physics-list')) {
+            physicsList.classList.remove('is-active');
+        }
+    });
+}
