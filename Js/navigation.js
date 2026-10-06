@@ -28,13 +28,17 @@ export default function callFunctionNavigation() {
     const historyContainer = document.querySelector('.history-container');
     const physicsList = document.querySelector('.physics-list');
     const physicsContainer = document.querySelector('.physics-container');
+    const geographyList = document.querySelector('.geography-list');
+    const geographyContainer = document.querySelector('.geography-container');
 
-    if (!historyList || !historyContainer || !physicsList || !physicsContainer) return;
+    if (!historyList || !historyContainer || !physicsList || !physicsContainer || !geographyList || !geographyContainer) return;
 
     const historyArray = Array.from(historyContainer.children);
     const physicsArray = Array.from(physicsContainer.children);
+    const geographyArray = Array.from(geographyContainer.children);
     
     navigation(historyList, historyArray);
     navigation(physicsList, physicsArray);
+    navigation(geographyList, geographyArray);
 }
 

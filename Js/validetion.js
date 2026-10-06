@@ -1,6 +1,4 @@
-const historyContainer = document.querySelector('.history-container');
-const physicsContainer = document.querySelector('.physics-container');
-
+// validetion.js
 function createListItem(title, targetListElement) {
     if (!targetListElement) return;
     const btn = document.createElement('button');
@@ -32,6 +30,7 @@ function renderSubjectData(dataArray, listContainer, contentContainer, prefix, b
         const topicWrapper = document.createElement('section');
         topicWrapper.className = blockClass; 
         topicWrapper.id = `${prefix}-topic-${index}`; 
+        
         const titleElement = document.createElement('h2');
         titleElement.textContent = item.title;
         topicWrapper.appendChild(titleElement);
@@ -46,9 +45,16 @@ function renderSubjectData(dataArray, listContainer, contentContainer, prefix, b
     });
 }
 
-export default function createElement(historyData, physicsData) {
+export default function createElement(historyData, physicsData, geographyData) {
+    const historyContainer = document.querySelector('.history-container');
+    const physicsContainer = document.querySelector('.physics-container');
+    const geographyContainer = document.querySelector('.geography-container'); // Исправлена опечатка
+
     const historyList = document.querySelector('.history-list');
     const physicsList = document.querySelector('.physics-list');
+    const geographyList = document.querySelector('.geography-list');
+
     renderSubjectData(historyData, historyList, historyContainer, 'history', 'history-topic-block');
     renderSubjectData(physicsData, physicsList, physicsContainer, 'physics', 'physics-topic-block');
+    renderSubjectData(geographyData, geographyList, geographyContainer, 'geography', 'geography-topic-block');
 }

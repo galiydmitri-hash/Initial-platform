@@ -25,9 +25,12 @@ export default function callFocusContainer(){
     const historyContainer = document.querySelector('.history-container');
     const physicsList = document.querySelector('.physics-list');
     const physicsContainer = document.querySelector('.physics-container');
+    const geographyList = document.querySelector('.geography-list');
+    const geographyContainer = document.querySelector('.geography-container');
 
-    if (!historyList || !historyContainer || !physicsList || !physicsContainer) return;
+    if (!historyList || !historyContainer || !physicsList || !physicsContainer || !geographyList || !geographyContainer) return;
 
     focusContainer(historyList, historyContainer, "ВСТУП. Модерна доба")
     focusContainer(physicsList, physicsContainer, "§ 1")
+    focusContainer(geographyList, geographyContainer, "§ 8")
 }
