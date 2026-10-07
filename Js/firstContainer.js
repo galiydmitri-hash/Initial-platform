@@ -27,10 +27,16 @@ export default function callFocusContainer(){
     const physicsContainer = document.querySelector('.physics-container');
     const geographyList = document.querySelector('.geography-list');
     const geographyContainer = document.querySelector('.geography-container');
+    const civicEducationList = document.querySelector('.civicEducation-list');
+    const civicEducationContainer = document.querySelector('.civicEducation-container');
+    const lawList = document.querySelector('.law-list');
+    const lawContainer = document.querySelector('.law-container');
 
-    if (!historyList || !historyContainer || !physicsList || !physicsContainer || !geographyList || !geographyContainer) return;
+    if (!historyList || !historyContainer || !physicsList || !physicsContainer || !geographyList || !geographyContainer || !civicEducationList || !civicEducationContainer || !lawList || !lawContainer) return;
 
     focusContainer(historyList, historyContainer, "ВСТУП. Модерна доба")
     focusContainer(physicsList, physicsContainer, "§ 1")
     focusContainer(geographyList, geographyContainer, "§ 8")
+    focusContainer(civicEducationList, civicEducationContainer, "§ 6")
+    focusContainer(lawList, lawContainer, "§ 1")
 }

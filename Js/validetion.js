@@ -45,16 +45,22 @@ function renderSubjectData(dataArray, listContainer, contentContainer, prefix, b
     });
 }
 
-export default function createElement(historyData, physicsData, geographyData) {
+export default function createElement(historyData, physicsData, geographyData, civicEducationData, lawData) {
     const historyContainer = document.querySelector('.history-container');
     const physicsContainer = document.querySelector('.physics-container');
-    const geographyContainer = document.querySelector('.geography-container'); // Исправлена опечатка
+    const geographyContainer = document.querySelector('.geography-container'); 
+    const civicEducationContainer = document.querySelector('.civicEducation-container')
+    const lawContainer = document.querySelector('.law-container'); 
 
     const historyList = document.querySelector('.history-list');
     const physicsList = document.querySelector('.physics-list');
     const geographyList = document.querySelector('.geography-list');
+    const civicEducationList = document.querySelector('.civicEducation-list');
+    const lawList = document.querySelector('.law-list');
 
     renderSubjectData(historyData, historyList, historyContainer, 'history', 'history-topic-block');
     renderSubjectData(physicsData, physicsList, physicsContainer, 'physics', 'physics-topic-block');
     renderSubjectData(geographyData, geographyList, geographyContainer, 'geography', 'geography-topic-block');
+    renderSubjectData(civicEducationData, civicEducationList, civicEducationContainer, 'civicEducation', 'civicEducation-topic-block');
+    renderSubjectData(lawData, lawList, lawContainer, 'law', 'law-topic-block');
 }
