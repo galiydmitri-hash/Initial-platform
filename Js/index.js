@@ -4,6 +4,7 @@ import openAndCloseList from "./list.js";
 import callFunctionNavigation from "./navigation.js";
 import openContainer from "./openContainer.js";
 import text from "./text.js";
+import theme from "./themes.js";
 import createElement from "./validetion.js";
 
 openContainer()
@@ -12,3 +13,4 @@ openAndCloseList()
 callFunctionNavigation()
 callFocusContainer()
 text()
+theme()

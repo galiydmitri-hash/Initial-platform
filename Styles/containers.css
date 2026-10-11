@@ -1,6 +1,16 @@
 :root {
     --cards-bg: rgba(255, 255, 255, 0.75);
-    --cards-border-color: rgba(255, 255, 255, 0.6);
+    --cards-border-color: rgba(255, 255, 255, 0.6); 
+    
+    --ui-shadow-large: 0 10px 40px rgba(229, 203, 186, 0.25);
+    --ui-shadow-medium: 0 10px 30px rgba(229, 203, 186, 0.25);
+    --ui-shadow-small: 0 4px 15px rgba(229, 203, 186, 0.2);
+    --btn-hover-bg: rgba(255, 255, 255, 0.9);
+    --item-hover-bg: rgba(255, 255, 255, 0.4);
+    --icon-color: #e6e6e6;
+
+    --color: #2c2520;
+    --color-dark-theme-text-primary: #f8f9fa; 
 }
 
 .container {
@@ -20,8 +30,26 @@
     background-attachment: fixed;
     z-index: 2;
     transform: translateX(100%);
-    transition: transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out, background-color 0.25s, color 0.25s;
     font-weight: 700;
+    color: var(--color);
+}
+
+.container.is-dark {
+    --cards-bg: rgba(255, 255, 255, 0.08);
+    --cards-border-color: rgba(255, 255, 255, 0.12);
+    --ui-shadow-large: 0 10px 40px rgba(0, 0, 0, 0.45);
+    --ui-shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --ui-shadow-small: 0 4px 15px rgba(0, 0, 0, 0.35);
+    --btn-hover-bg: rgba(255, 255, 255, 0.18);
+    --item-hover-bg: rgba(255, 255, 255, 0.08); 
+
+    background-color: #0b0f19; 
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(255, 120, 70, 0.15) 0%, transparent 45%), 
+        radial-gradient(circle at 85% 80%, rgba(255, 180, 100, 0.12) 0%, transparent 50%);
+
+    color: var(--color-dark-theme-text-primary);
 }
 
 .container::-webkit-scrollbar {
@@ -68,9 +96,10 @@
     padding: 12px;
     background-color: var(--cards-bg);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--cards-border-color);
-    box-shadow: 0 10px 30px rgba(229, 203, 186, 0.25);
-    transition: 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: var(--ui-shadow-medium);
+    transition: 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 
 .list::-webkit-scrollbar {
@@ -92,16 +121,17 @@
     justify-content: center;
     background-color: var(--cards-bg);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--cards-border-color);
     border-radius: 50px;
-    box-shadow: 0 4px 15px rgba(229, 203, 186, 0.2);
+    box-shadow: var(--ui-shadow-small);
     cursor: pointer;
-    transition: transform 0.15s, background-color 0.15s, box-shadow 0.15s;
+    transition: transform 0.15s, background-color 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
 .btn:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 6px 20px rgba(229, 203, 186, 0.35);
+    background-color: var(--btn-hover-bg);
+    box-shadow: var(--ui-shadow-large);
 }
 
 .btn:active {
@@ -137,10 +167,12 @@
     justify-content: center;
     background-color: var(--cards-bg);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--cards-border-color);
     border-radius: 20px;
     padding: 25px;
-    box-shadow: 0 10px 40px rgba(229, 203, 186, 0.25);
+    box-shadow: var(--ui-shadow-large);
+    transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 
 .secondary-content {
@@ -168,14 +200,14 @@
 
 .list-item:hover {
     opacity: 1;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: var(--item-hover-bg);
 }
 
 .list-item.is-active {
     opacity: 1;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: var(--btn-hover-bg);
     border: 1px solid var(--cards-border-color);
-    box-shadow: 0 4px 15px rgba(229, 203, 186, 0.15);
+    box-shadow: var(--ui-shadow-small);
 }
 
 .close-container {
@@ -191,8 +223,9 @@
     position: absolute;
     height: 25px;
     width: 3px;
-    background-color: rgb(230, 230, 230);
+    background-color: var(--icon-color);
     border-radius: 25px;
+    transition: background-color 0.25s;
 }
 
 .line:first-child {
