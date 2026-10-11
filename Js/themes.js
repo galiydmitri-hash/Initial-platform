@@ -1,0 +1,1 @@
+const themesItems = document.querySelectorAll('body, .container, p, br')
