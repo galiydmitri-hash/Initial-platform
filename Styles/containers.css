@@ -172,13 +172,30 @@
     border-radius: 20px;
     padding: 25px;
     box-shadow: var(--ui-shadow-large);
-    transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
+    transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
 
-.secondary-content {
+.secondary-content, .short-content {
     height: auto;
     width: 100%; 
     max-width: 900px;
+    transition: all 0.25s;
+}
+
+.short-content{
+    display: none;
+}
+
+.main-content.is-active, .secondary-content.is-active{
+    display: flex;
+}
+
+.main-content.is-disable, .secondary-content.is-disable{
+    display: none;
+}
+
+.short-content.is-active{
+    display: flex;
 }
 
 .list-item {
@@ -235,3 +252,74 @@
 .line:last-child {
     transform: rotate(-45deg);
 }
+
+.btn-container {
+    height: 40px; 
+    width: 300px; 
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 4px; 
+    border: 1px solid var(--cards-border-color);
+    background-color: var(--cards-bg);
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 100px; 
+    box-shadow: var(--ui-shadow-medium);
+    transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+@media (max-width: 430px) {
+    .btn-container{
+        width: 240px;
+    }
+}
+
+.info-btn {
+    height: 100%;
+    width: 50%; 
+    border-radius: 100px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 15px; 
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 3;
+    color: #545454;
+    opacity: 0.6; 
+    transition: font-size 0.25s, opacity 0.2s ease, transform 0.1s ease;
+}
+
+.all-info{
+    font-size: 20px;
+}
+
+.bg {
+    position: absolute;
+    top: 50%; 
+    left: 2px;
+    height: 95%;
+    width: calc(50% - 4px);  
+    background: rgba(255, 255, 255, 0.85); 
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(229, 203, 186, 0.4);
+    border-radius: 100px;
+    z-index: 2;
+    transform: translate(0, -50%);
+    transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.25s, box-shadow 0.25s, border-color 0.25s; 
+}
+
+.title{
+    font-size: 25px;
+}
+
+.title.is-active{
+    display: block;
+}
+
+.title.is-disable{
+    display: none;
+}
+

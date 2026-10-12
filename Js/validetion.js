@@ -1,4 +1,3 @@
-// validetion.js
 function createListItem(title, targetListElement) {
     if (!targetListElement) return;
     const btn = document.createElement('button');
@@ -7,18 +6,33 @@ function createListItem(title, targetListElement) {
     targetListElement.appendChild(btn);
 }
 
-function createMainContent(mainContent) {
+function setElementClass(element, baseClass, item) {
+    if (item && item.shortContent) {
+        element.className = `${baseClass} is-active`; 
+    } else {
+        element.className = baseClass;
+    }
+}
+
+function createMainContent(mainContent, item) {
     const mainContainer = document.createElement('div');
-    mainContainer.className = "main-content";
-    mainContainer.innerHTML = mainContent.replace(/\n/g, '<br>');
+    setElementClass(mainContainer, "main-content", item);
+    mainContainer.innerHTML = mainContent ? mainContent.replace(/\n/g, '<br>') : '';
     return mainContainer; 
 }
 
-function createSecondaryContent(secondaryContent) {
+function createSecondaryContent(secondaryContent, item) {
     const secondaryContainer = document.createElement('div');
-    secondaryContainer.className = "secondary-content";
-    secondaryContainer.innerHTML = secondaryContent.replace(/\n/g, '<br>');
+    setElementClass(secondaryContainer, "secondary-content", item);
+    secondaryContainer.innerHTML = secondaryContent ? secondaryContent.replace(/\n/g, '<br>') : '';
     return secondaryContainer; 
+}
+
+function createShortContent(shortContent) {
+    const shortContainer = document.createElement('div');
+    shortContainer.className = "short-content";
+    shortContainer.innerHTML = shortContent ? shortContent.replace(/\n/g, '<br>') : '';
+    return shortContainer; 
 }
 
 function renderSubjectData(dataArray, listContainer, contentContainer, prefix, blockClass) {
@@ -33,13 +47,21 @@ function renderSubjectData(dataArray, listContainer, contentContainer, prefix, b
         
         const titleElement = document.createElement('h2');
         titleElement.textContent = item.title;
+        setElementClass(titleElement, "title", item);
         topicWrapper.appendChild(titleElement);
 
-        const mainBlock = createMainContent(item.mainContent);
-        const secondaryBlock = createSecondaryContent(item.secondaryContent);
-
-        topicWrapper.appendChild(mainBlock);
-        topicWrapper.appendChild(secondaryBlock);
+        const mainBlock = createMainContent(item.mainContent, item);
+        const secondaryBlock = createSecondaryContent(item.secondaryContent, item);
+        
+        if (item.shortContent){
+            const shortBlock = createShortContent(item.shortContent)
+            topicWrapper.appendChild(mainBlock);
+            topicWrapper.appendChild(secondaryBlock);
+            topicWrapper.appendChild(shortBlock);
+        } else {
+            topicWrapper.appendChild(mainBlock);
+            topicWrapper.appendChild(secondaryBlock);
+        }
 
         contentContainer.appendChild(topicWrapper);
     });

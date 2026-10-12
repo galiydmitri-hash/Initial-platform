@@ -1,3 +1,4 @@
+import changeForms from "./changeForms.js";
 import { historyData, physicsData, geographyData, civicEducationData, lawData } from "./data.js";
 import callFocusContainer from "./firstContainer.js";
 import openAndCloseList from "./list.js";
@@ -14,3 +15,4 @@ callFunctionNavigation()
 callFocusContainer()
 text()
 theme()
+changeForms()

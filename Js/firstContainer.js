@@ -1,15 +1,16 @@
 function focusContainer(currentlist, currentContainer, text) {
     if (!currentlist || !currentContainer) return;
 
-    const listArray = Array.from(currentlist.children);
-    const containerArray = Array.from(currentContainer.children);
-    const targetText = text;
+    const btnContainer = currentContainer.querySelector('.btn-container');
+    const targetText = text.trim(); 
 
+    const listArray = Array.from(currentlist.children);
     const activeListItem = listArray.find(el => el.textContent.trim() === targetText);
     if (activeListItem) {
         activeListItem.classList.add('is-active');
     }
 
+    const containerArray = Array.from(currentContainer.children);
     const activeItem = containerArray.find(el => {
         const heading = el.querySelector('h2');
         return heading && heading.textContent.trim() === targetText;
@@ -17,6 +18,10 @@ function focusContainer(currentlist, currentContainer, text) {
 
     if (activeItem) {
         activeItem.classList.add('is-active');
+        
+        if (btnContainer) {
+            btnContainer.style.display = 'flex';
+        }
     }
 }
 

@@ -3,7 +3,6 @@ function navigation(currentList, contentArray) {
 
     currentList.addEventListener('click', (event) => {
         const item = event.target.closest('.list-item');
-        
         if (!item) return;
 
         const listItems = currentList.querySelectorAll('.list-item');
@@ -11,7 +10,7 @@ function navigation(currentList, contentArray) {
         item.classList.add('is-active');
 
         const targetText = item.textContent.trim();
-        
+
         contentArray.forEach((el) => {
             const heading = el.querySelector('h2');
             if (heading && heading.textContent.trim() === targetText) {
@@ -20,8 +19,24 @@ function navigation(currentList, contentArray) {
                 el.classList.remove('is-active');
             }
         });
+
+        const activeTopic = contentArray.find(el => el.classList.contains('is-active'));
+        
+        if (activeTopic) {
+            
+            const btnContainer = activeTopic.querySelector('.btn-container');
+            
+            if (btnContainer) {
+                if (activeTopic.querySelector('.short-content')) {
+                    btnContainer.style.display = 'flex';
+                } else {
+                    btnContainer.style.display = 'none';
+                }
+            }
+        }
     });
 }
+
 
 export default function callFunctionNavigation() {
     const historyList = document.querySelector('.history-list');
@@ -32,22 +47,20 @@ export default function callFunctionNavigation() {
     const geographyContainer = document.querySelector('.geography-container');
     const civicEducationList = document.querySelector('.civicEducation-list');
     const civicEducationContainer = document.querySelector('.civicEducation-container');
-    const lawList = document.querySelector('.law-list')
-    const lawContainer = document.querySelector('.law-container')
+    const lawList = document.querySelector('.law-list');
+    const lawContainer = document.querySelector('.law-container');
 
     if (!historyList || !historyContainer || !physicsList || !physicsContainer || !geographyList || !geographyContainer || !civicEducationList || !civicEducationContainer || !lawList || !lawContainer) return;
 
     const historyArray = Array.from(historyContainer.children);
     const physicsArray = Array.from(physicsContainer.children);
     const geographyArray = Array.from(geographyContainer.children);
-    const civicEducationArray = Array.from(civicEducationContainer.children)
-    const lawArray = Array.from(lawContainer.children)
+    const civicEducationArray = Array.from(civicEducationContainer.children);
+    const lawArray = Array.from(lawContainer.children);
     
     navigation(historyList, historyArray);
     navigation(physicsList, physicsArray);
     navigation(geographyList, geographyArray);
-    navigation(civicEducationList, civicEducationArray)
-    navigation(civicEducationList, civicEducationArray)
-    navigation(lawList, lawArray)
+    navigation(civicEducationList, civicEducationArray); 
+    navigation(lawList, lawArray);
 }
-
