@@ -1,5 +1,9 @@
-function navigation(currentList, contentArray) {
+import check from "./checkingChangeForms.js";
+
+function navigation(currentList, contentArray, currentContainer) {
     if (!currentList || !contentArray || contentArray.length === 0) return;
+
+    check(currentContainer);
 
     currentList.addEventListener('click', (event) => {
         const item = event.target.closest('.list-item');
@@ -13,30 +17,19 @@ function navigation(currentList, contentArray) {
 
         contentArray.forEach((el) => {
             const heading = el.querySelector('h2');
-            if (heading && heading.textContent.trim() === targetText) {
+
+            if (!heading) return; 
+
+            if (heading.textContent.trim() === targetText) {
                 el.classList.add('is-active');
             } else {
                 el.classList.remove('is-active');
             }
         });
 
-        const activeTopic = contentArray.find(el => el.classList.contains('is-active'));
-        
-        if (activeTopic) {
-            
-            const btnContainer = activeTopic.querySelector('.btn-container');
-            
-            if (btnContainer) {
-                if (activeTopic.querySelector('.short-content')) {
-                    btnContainer.style.display = 'flex';
-                } else {
-                    btnContainer.style.display = 'none';
-                }
-            }
-        }
+        check(currentContainer);
     });
 }
-
 
 export default function callFunctionNavigation() {
     const historyList = document.querySelector('.history-list');
@@ -50,7 +43,9 @@ export default function callFunctionNavigation() {
     const lawList = document.querySelector('.law-list');
     const lawContainer = document.querySelector('.law-container');
 
-    if (!historyList || !historyContainer || !physicsList || !physicsContainer || !geographyList || !geographyContainer || !civicEducationList || !civicEducationContainer || !lawList || !lawContainer) return;
+    if (!historyList || !historyContainer || !physicsList || !physicsContainer || 
+        !geographyList || !geographyContainer || !civicEducationList || 
+        !civicEducationContainer || !lawList || !lawContainer) return;
 
     const historyArray = Array.from(historyContainer.children);
     const physicsArray = Array.from(physicsContainer.children);
@@ -58,9 +53,9 @@ export default function callFunctionNavigation() {
     const civicEducationArray = Array.from(civicEducationContainer.children);
     const lawArray = Array.from(lawContainer.children);
     
-    navigation(historyList, historyArray);
-    navigation(physicsList, physicsArray);
-    navigation(geographyList, geographyArray);
-    navigation(civicEducationList, civicEducationArray); 
-    navigation(lawList, lawArray);
+    navigation(historyList, historyArray, historyContainer);
+    navigation(physicsList, physicsArray, physicsContainer);
+    navigation(geographyList, geographyArray, geographyContainer);
+    navigation(civicEducationList, civicEducationArray, civicEducationContainer); 
+    navigation(lawList, lawArray, lawContainer);
 }

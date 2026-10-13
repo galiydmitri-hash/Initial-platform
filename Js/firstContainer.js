@@ -19,8 +19,8 @@ function focusContainer(currentlist, currentContainer, text) {
     if (activeItem) {
         activeItem.classList.add('is-active');
         
-        if (btnContainer) {
-            btnContainer.style.display = 'flex';
+        if (btnContainer && activeItem.querySelector('.short-content')) {
+            btnContainer.classList.add('is-active')
         }
     }
 }

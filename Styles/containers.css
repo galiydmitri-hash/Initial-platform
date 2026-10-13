@@ -153,7 +153,7 @@
 }
 
 .history-topic-block.is-active, .physics-topic-block.is-active, .geography-topic-block.is-active, .civicEducation-topic-block.is-active, .law-topic-block.is-active {
-    display: flex;
+    display: flex !important;
     opacity: 1;
     transform: translateY(0);
 }
@@ -175,27 +175,41 @@
     transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.25s;
 }
 
-.secondary-content, .short-content {
+.secondary-content {
     height: auto;
     width: 100%; 
     max-width: 900px;
+    display: flex;
     transition: all 0.25s;
 }
 
-.short-content{
+.short-content {
+    height: auto;
+    width: 100%; 
+    max-width: 900px;
     display: none;
+    transition: all 0.25s;
 }
 
-.main-content.is-active, .secondary-content.is-active{
-    display: flex;
+.main-content.is-active, 
+.secondary-content.is-active,
+.short-content.is-active {
+    display: flex !important;
 }
 
-.main-content.is-disable, .secondary-content.is-disable{
-    display: none;
+.main-content.is-disable, 
+.secondary-content.is-disable,
+.title.is-disable {
+    display: none !important;
 }
 
-.short-content.is-active{
-    display: flex;
+.title {
+    font-size: 25px;
+    display: block;
+}
+
+.title.is-active {
+    display: block !important;
 }
 
 .list-item {
@@ -256,6 +270,7 @@
 .btn-container {
     height: 40px; 
     width: 300px; 
+    display: none;
     align-items: center;
     justify-content: space-between;
     position: relative;
@@ -269,8 +284,12 @@
     transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 
+.btn-container.is-active {
+    display: flex;
+}
+
 @media (max-width: 430px) {
-    .btn-container{
+    .btn-container {
         width: 240px;
     }
 }
@@ -292,7 +311,7 @@
     transition: font-size 0.25s, opacity 0.2s ease, transform 0.1s ease;
 }
 
-.all-info{
+.all-info {
     font-size: 20px;
 }
 
@@ -310,16 +329,3 @@
     transform: translate(0, -50%);
     transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.25s, box-shadow 0.25s, border-color 0.25s; 
 }
-
-.title{
-    font-size: 25px;
-}
-
-.title.is-active{
-    display: block;
-}
-
-.title.is-disable{
-    display: none;
-}
-

@@ -1,8 +1,13 @@
-export default function changeForms() {
-    const allInfo = document.querySelector('.all-info');
-    const mainInfo = document.querySelector('.main-info');
-    const bg = document.querySelector('.bg');
-    const btnContainer = document.querySelector('.btn-container');
+function changeForms(currentContainer) {
+    if (!currentContainer) return; 
+
+    const btnContainer = currentContainer.querySelector('.btn-container');
+    
+    if (!btnContainer) return; 
+
+    const allInfo = btnContainer.querySelector('.all-info');
+    const mainInfo = btnContainer.querySelector('.main-info');
+    const bg = btnContainer.querySelector('.bg');
 
     if (!allInfo || !mainInfo) return;
 
@@ -12,7 +17,7 @@ export default function changeForms() {
         allInfo.style.fontSize = '20px';
         mainInfo.style.fontSize = '15px';
 
-        const blocks = Array.from(document.querySelectorAll('[class*="-topic-block"]'))
+        const blocks = Array.from(currentContainer.querySelectorAll('[class*="-topic-block"]'))
             .filter(el => el.querySelector('.short-content'));
 
         blocks.forEach((block) => {
@@ -36,7 +41,7 @@ export default function changeForms() {
         mainInfo.style.fontSize = '20px';
         allInfo.style.fontSize = '15px';
 
-        const blocks = Array.from(document.querySelectorAll('[class*="-topic-block"]'))
+        const blocks = Array.from(currentContainer.querySelectorAll('[class*="-topic-block"]'))
             .filter(el => el.querySelector('.short-content'));
 
         blocks.forEach((block) => {
@@ -50,4 +55,18 @@ export default function changeForms() {
             if (shortBlock) shortBlock.classList.add('is-active');
         });
     });
+}
+
+export default function callChangeForms(){
+    const historyContainer = document.querySelector('.history-container');
+    const physicsContainer = document.querySelector('.physics-container');
+    const geographyContainer = document.querySelector('.geography-container');
+    const civicEducationContainer = document.querySelector('.civicEducation-container');    
+    const lawContainer = document.querySelector('.law-container');    
+    
+    changeForms(historyContainer)
+    changeForms(physicsContainer)
+    changeForms(geographyContainer)
+    changeForms(civicEducationContainer)
+    changeForms(lawContainer)
 }
