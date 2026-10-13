@@ -329,3 +329,9 @@
     transform: translate(0, -50%);
     transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.25s, box-shadow 0.25s, border-color 0.25s; 
 }
+
+.formul {
+    display: contents;
+    color: rgb(128, 0, 32);
+    font-size: 19px;
+}
