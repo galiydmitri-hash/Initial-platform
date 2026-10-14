@@ -7,32 +7,10 @@
     --ui-shadow-small: 0 4px 15px rgba(229, 203, 186, 0.2);
     --btn-hover-bg: rgba(255, 255, 255, 0.9);
     --item-hover-bg: rgba(255, 255, 255, 0.4);
-    --icon-color: #e6e6e6;
+    --icon-color: #d5d5d5;
 
     --color: #2c2520;
     --color-dark-theme-text-primary: #f8f9fa; 
-}
-
-.container {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding-top: 60px;
-    overflow-x: hidden;
-    font-family: 'Nunito', sans-serif;
-    overflow-y: auto;
-    background-color: #fdf8f5;
-    background-image: 
-        radial-gradient(circle at 15% 20%, #ffe5d4 0%, transparent 45%),
-        radial-gradient(circle at 85% 80%, #ffdfbe 0%, transparent 50%);
-    background-attachment: fixed;
-    z-index: 2;
-    transform: translateX(100%);
-    transition: transform 0.25s ease-in-out, background-color 0.25s, color 0.25s;
-    font-weight: 700;
-    color: var(--color);
 }
 
 .container.is-dark {
@@ -52,12 +30,79 @@
     color: var(--color-dark-theme-text-primary);
 }
 
+.container {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-top: 60px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    color: var(--color);
+    background-color: #fdf8f5;
+    background-image: 
+        radial-gradient(circle at 15% 20%, #38bdf8 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, #4ade80 0%, transparent 55%);
+    background-attachment: fixed;
+    z-index: 2;
+    transform: translateX(100%);
+    transition: transform 0.25s ease-in-out, background-color 0.25s, color 0.25s;
+}
+
 .container::-webkit-scrollbar {
     display: none;
 }
 
 .container.is-active {
     transform: translateX(0);
+}
+
+.lab-container{
+    background-color: #fdf8f5 !important;
+    background-image: 
+        radial-gradient(circle at 15% 20%, #38bdf8 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, #4ade80 0%, transparent 55%) !important;
+    color: var(--color) !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#geography-section, #physics-section {
+    height: auto;
+    width: 100%;
+    max-width: 900px;
+    padding-left: 15px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.lab-close-btn{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(236, 21, 21);
+    border-radius: 10px;
+    border: 2px solid black;
+    border-bottom: 4px solid black;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+.lab-close-btn:active{
+    border-bottom: 2px solid black;
+    transform: translateY(3px);
 }
 
 .nav {
@@ -113,6 +158,40 @@
     transform: translateY(0);
 }
 
+.list-item {
+    opacity: 0.6;
+    height: 50px;
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    color: var(--color);
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+}
+
+body.is-dark .list-item{
+    color: var(--color-dark-theme-text-primary);
+}
+
+.list-item:hover {
+    opacity: 1;
+    background-color: var(--item-hover-bg);
+}
+
+.list-item.is-active {
+    opacity: 1;
+    background-color: var(--btn-hover-bg);
+    border: 1px solid var(--cards-border-color);
+    box-shadow: var(--ui-shadow-small);
+}
+
 .btn {
     height: 40px;
     width: 40px;
@@ -138,24 +217,83 @@
     transform: scale(0.95);
 }
 
-.history-topic-block, .physics-topic-block, .geography-topic-block, .civicEducation-topic-block, .law-topic-block {
-    width: 100%;
-    display: none; 
-    opacity: 0;
-    transform: translateY(15px);
+.btn-container {
+    height: 40px; 
+    width: 300px; 
+    display: none;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    overflow-wrap: break-word;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    justify-content: space-between;
+    position: relative;
+    padding: 4px; 
+    border: 1px solid var(--cards-border-color);
+    background-color: var(--cards-bg);
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 100px; 
+    box-shadow: var(--ui-shadow-medium);
+    transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
 }
 
-.history-topic-block.is-active, .physics-topic-block.is-active, .geography-topic-block.is-active, .civicEducation-topic-block.is-active, .law-topic-block.is-active {
-    display: flex !important;
-    opacity: 1;
-    transform: translateY(0);
+.btn-container.is-active {
+    display: flex;
+}
+
+.info-btn {
+    height: 100%;
+    width: 50%; 
+    border-radius: 100px;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 15px; 
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 3;
+    color: #545454;
+    opacity: 0.6; 
+    transition: font-size 0.25s, opacity 0.2s ease, transform 0.1s ease;
+}
+
+.geography-subject-btn, .geography-paragraph-btn, .physics-subject-btn, .physics-paragraph-btn, .geography-count-btn, .physics-count-btn, .clin-btn {
+    height: auto;
+    width: auto;
+    padding: 10px;
+    border: 2px solid black;
+    border-bottom: 7px solid black;
+    font-size: 40px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    border-radius: 15px;
+    background-color: greenyellow;
+    cursor: pointer;
+    transition: 0.10s;
+}
+
+.physics-subject-btn, .physics-paragraph-btn{
+    background-color: rgb(129, 176, 252);
+}
+
+.physics-count-btn{
+    background-color: rgb(129, 176, 252);
+}
+
+.geography-count-btn, .physics-count-btn, .clin-btn {
+    font-size: 18px;
+}
+
+.clin-btn {
+    background-color: rgb(236, 21, 21);
+}
+
+.geography-count-btn:active, .physics-count-btn:active, .geography-subject-btn:active, .geography-paragraph-btn:active, .physics-subject-btn:active, .physics-paragraph-btn:active, .clin-btn:active{
+    border-bottom: 2px solid black;
+    transform: translateY(3px);
+}
+
+.geography-subject-btn:hover, .geography-paragraph-btn:hover, .physics-subject-btn:hover, .physics-paragraph-btn:hover{
+    border-bottom: 2px solid black;
+    transform: translateY(3px);
 }
 
 .main-content {
@@ -203,6 +341,34 @@
     display: none !important;
 }
 
+.history-topic-block, 
+.physics-topic-block, 
+.geography-topic-block, 
+.civicEducation-topic-block, 
+.law-topic-block {
+    width: 100%;
+    display: none; 
+    opacity: 0;
+    transform: translateY(15px);
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    overflow-wrap: break-word;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.history-topic-block.is-active, 
+.physics-topic-block.is-active, 
+.geography-topic-block.is-active, 
+.civicEducation-topic-block.is-active, 
+.law-topic-block.is-active {
+    display: flex !important;
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .title {
     font-size: 25px;
     display: block;
@@ -210,35 +376,6 @@
 
 .title.is-active {
     display: block !important;
-}
-
-.list-item {
-    opacity: 0.6;
-    height: 50px;
-    width: 100%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    border: 1px solid transparent;
-    border-radius: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    background-color: transparent;
-    transition: 0.2s ease-in-out;
-}
-
-.list-item:hover {
-    opacity: 1;
-    background-color: var(--item-hover-bg);
-}
-
-.list-item.is-active {
-    opacity: 1;
-    background-color: var(--btn-hover-bg);
-    border: 1px solid var(--cards-border-color);
-    box-shadow: var(--ui-shadow-small);
 }
 
 .close-container {
@@ -267,54 +404,6 @@
     transform: rotate(-45deg);
 }
 
-.btn-container {
-    height: 40px; 
-    width: 300px; 
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    padding: 4px; 
-    border: 1px solid var(--cards-border-color);
-    background-color: var(--cards-bg);
-    backdrop-filter: blur(16px); 
-    -webkit-backdrop-filter: blur(16px);
-    border-radius: 100px; 
-    box-shadow: var(--ui-shadow-medium);
-    transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
-}
-
-.btn-container.is-active {
-    display: flex;
-}
-
-@media (max-width: 430px) {
-    .btn-container {
-        width: 240px;
-    }
-}
-
-.info-btn {
-    height: 100%;
-    width: 50%; 
-    border-radius: 100px;
-    border: none;
-    background-color: transparent;
-    outline: none;
-    font-size: 15px; 
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-    z-index: 3;
-    color: #545454;
-    opacity: 0.6; 
-    transition: font-size 0.25s, opacity 0.2s ease, transform 0.1s ease;
-}
-
-.all-info {
-    font-size: 20px;
-}
-
 .bg {
     position: absolute;
     top: 50%; 
@@ -332,6 +421,72 @@
 
 .formul {
     display: contents;
-    color: rgb(128, 0, 32);
-    font-size: 19px;
+    font-weight: 900;
+}
+
+.info-container {
+    height: auto;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    transition: 0.25s;
+}
+
+.counter-container {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.geography-area, .physics-area {
+    height: 50px;
+    width: 200px; 
+    border-radius: 15px;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+    border: 2px solid black;
+    border-bottom: 7px solid black;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.1s;
+}
+
+.geography-area:focus, .physics-area:focus {
+    border-bottom: 2px solid black;
+    transform: translateY(3px);
+}
+
+.geography-result, .physics-result {
+    height: 50px;
+    width: auto; 
+    padding: 10px;
+    border: 2px solid black;
+    border-bottom: 7px solid black;
+    border-radius: 15px;
+}
+
+.geography-result{
+    background-color: greenyellow;
+}
+
+.physics-result{
+    background-color: rgb(129, 176, 252);
+}
+
+.all-info {
+    font-size: 20px;
+}
+
+@media (max-width: 430px) {
+    .btn-container {
+        width: 240px;
+    }
 }

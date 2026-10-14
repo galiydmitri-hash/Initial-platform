@@ -46,6 +46,7 @@
             <path d="M20.985 12.486A9 9 0 1 1 11.514 3.015a7 7 0 0 0 9.471 9.471Z"/>
             </svg>
         </button>
+        <button class="lab-btn">Онлайн лабораторія 🧪</button>
         <button class="subject-card history">
             <img src="Image/history-icon.webp" alt="history-icon">
             <p>Історія України</p>
@@ -66,6 +67,67 @@
             <img src="Image/law-icon.webp" alt="law-icon">
             <p>Правознавство</p>
         </button>
+
+        <div class="container lab-container">
+            <header class="nav">
+                <button class="lab-close-btn close-btn ">
+                    <div class="close-container">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                    </div>
+                </button>
+            </header>
+
+            <section id="geography-section">
+                <div class="info-container">
+                    <button class="geography-subject-btn">Географія</button>
+                    <button class="geography-paragraph-btn">§ 9</button>
+                </div>
+                
+                <div class="counter-container">
+                    <h2>Розрахунок кількості робочої сили</h2>
+                    <label for="Кількість зайнятих осіб">Кількість зайнятих осіб:</label>
+                    <input type="text" name="Кількість зайнятих осіб" id="busyPeople" class="geography-area">
+                    <label for="Кількість безробітніх осіб">Кількість безробітніх осіб:</label>
+                    <input type="text" name="Кількість безробітніх осіб" id="lazyPeople" class="geography-area">
+                </div>
+
+                <div class="counter-container">
+                    <h2>Розрахунок кількості зайнятих осіб в країні</h2>
+                    <label for="Кількість зайнятих осіб">Кількість зайнятих осіб:</label>
+                    <input type="text" name="Кількість зайнятих осіб" id="busyPeople2" class="geography-area">
+                    <label for="Загальне населення країни">Загальне населення країни:</label>
+                    <input type="text" name="Загальне населення країни" id="allPeople" class="geography-area">
+                </div>
+                
+                <div>
+                    <button class="geography-count-btn">Розрахувати</button>
+                    <button class="clin-btn">Очистити</button>
+                </div>
+                <div class="geography-result">Результат: ...</div>
+            </section>
+
+            <section id="physics-section">
+                <div class="info-container">
+                    <button class="physics-subject-btn">Фізика</button>
+                    <button class="physics-paragraph-btn">§ 3</button>
+                </div>
+                
+                <div class="counter-container">
+                    <h2>Перший закон Фарадея</h2>
+                    <label for="Електрохімічний еквівалент">Електрохімічний еквівалент:</label>
+                    <input type="text" name="Електрохімічний еквівалент" id="elecEkvi" class="physics-area">
+                    <label for="Електричний заряд">Електричний заряд:</label>
+                    <input type="text" name="Електричний заряд" id="elecPower" class="physics-area">
+                </div>
+                
+                <div>
+                    <button class="physics-count-btn">Розрахувати</button>
+                    <button class="clin-btn">Очистити</button>
+                </div>
+                <div class="physics-result">Результат: ...</div>
+            </section>
+        </div>
 
         <div class="container history-container">
             <header class="nav">

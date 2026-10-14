@@ -1,6 +1,7 @@
 import callChangeForms from "./changeForms.js";
 import { historyData, physicsData, geographyData, civicEducationData, lawData } from "./data.js";
 import callFocusContainer from "./firstContainer.js";
+import counter from "./formul.js";
 import openAndCloseList from "./list.js";
 import callFunctionNavigation from "./navigation.js";
 import openContainer from "./openContainer.js";
@@ -16,3 +17,4 @@ callFocusContainer()
 text()
 theme()
 callChangeForms()
+counter()

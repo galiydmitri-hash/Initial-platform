@@ -3,16 +3,22 @@ const subjectPhysics = document.querySelector('.physics')
 const subjectGeography = document.querySelector('.geography')
 const subjectCivicEducation = document.querySelector('.civicEducation')
 const subjectLaw = document.querySelector('.law')
+const onlineLabBtn = document.querySelector('.lab-btn')
 
 const historyContainer = document.querySelector('.history-container')
 const physicsContainer = document.querySelector('.physics-container')
 const geographyContainer = document.querySelector('.geography-container')
 const civicEducationContainer = document.querySelector('.civicEducation-container')
 const lawContainer = document.querySelector('.law-container')
+const labContainer = document.querySelector('.lab-container')
 
 const closeBtn = document.querySelectorAll('.close-btn')
 
 export default function openAndCloseContainer(){
+    onlineLabBtn.addEventListener('click', () => {
+        labContainer.classList.add('is-active')
+    })
+
     subjectHistory.addEventListener('click', () => {
         physicsContainer.classList.remove('is-active')
         geographyContainer.classList.remove('is-active')
@@ -64,5 +70,6 @@ export default function openAndCloseContainer(){
         geographyContainer.classList.remove('is-active')
         civicEducationContainer.classList.remove('is-active')
         lawContainer.classList.remove('is-active')
+        labContainer.classList.remove('is-active')
     }))
 }
