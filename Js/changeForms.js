@@ -1,9 +1,6 @@
-function changeForms(currentContainer) {
-    if (!currentContainer) return; 
-
-    const btnContainer = currentContainer.querySelector('.btn-container');
-    
-    if (!btnContainer) return; 
+export default function changeForms() {
+    const btnContainer = document.querySelector('.nav .btn-container');
+    if (!btnContainer) return;
 
     const allInfo = btnContainer.querySelector('.all-info');
     const mainInfo = btnContainer.querySelector('.main-info');
@@ -11,11 +8,18 @@ function changeForms(currentContainer) {
 
     if (!allInfo || !mainInfo) return;
 
+    const getActiveSubjectContainer = () => {
+        return document.querySelector('.container.is-active:not(.lab-container)');
+    };
+
     allInfo.addEventListener('click', () => {
         if (bg) bg.style.transform = "translateY(-50%) translateX(0)";
 
         allInfo.style.fontSize = '20px';
         mainInfo.style.fontSize = '15px';
+
+        const currentContainer = getActiveSubjectContainer();
+        if (!currentContainer) return;
 
         const blocks = Array.from(currentContainer.querySelectorAll('[class*="-topic-block"]'))
             .filter(el => el.querySelector('.short-content'));
@@ -33,13 +37,16 @@ function changeForms(currentContainer) {
     });
 
     mainInfo.addEventListener('click', () => {
-        if (bg && btnContainer) {
+        if (bg) {
             const step = btnContainer.clientWidth / 2;
             bg.style.transform = `translateY(-50%) translateX(${step}px)`;
         }
 
         mainInfo.style.fontSize = '20px';
         allInfo.style.fontSize = '15px';
+
+        const currentContainer = getActiveSubjectContainer();
+        if (!currentContainer) return;
 
         const blocks = Array.from(currentContainer.querySelectorAll('[class*="-topic-block"]'))
             .filter(el => el.querySelector('.short-content'));
@@ -55,18 +62,4 @@ function changeForms(currentContainer) {
             if (shortBlock) shortBlock.classList.add('is-active');
         });
     });
-}
-
-export default function callChangeForms(){
-    const historyContainer = document.querySelector('.history-container');
-    const physicsContainer = document.querySelector('.physics-container');
-    const geographyContainer = document.querySelector('.geography-container');
-    const civicEducationContainer = document.querySelector('.civicEducation-container');    
-    const lawContainer = document.querySelector('.law-container');    
-    
-    changeForms(historyContainer)
-    changeForms(physicsContainer)
-    changeForms(geographyContainer)
-    changeForms(civicEducationContainer)
-    changeForms(lawContainer)
 }

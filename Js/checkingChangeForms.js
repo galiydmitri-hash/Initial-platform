@@ -1,11 +1,10 @@
-export default function check(currentContainer){
-    if (!currentContainer) return;
-
-    const btnContainer = currentContainer.querySelector('.btn-container');
+export default function check(currentContainer) {
+    const btnContainer = document.querySelector('.btn-container');
     if (!btnContainer) return;
 
-    const activeTopic = currentContainer.querySelector('[class*="-topic-block"].is-active');
-
+    const activeContainer = currentContainer || document.querySelector('.container.is-active:not(.lab-container)');
+    
+    const activeTopic = activeContainer ? activeContainer.querySelector('[class*="-topic-block"].is-active') : null;
     const hasShortContent = activeTopic && activeTopic.querySelector('.short-content');
 
     if (hasShortContent) {

@@ -12,41 +12,10 @@
 </head>
 <body>
     <main>
-        <button class="theme">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#FBBF24"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="sun">
-            <circle cx="12" cy="12" r="4"/>
-            <path d="M12 2v2"/>
-            <path d="M12 20v2"/>
-            <path d="m4.93 4.93 1.42 1.42"/>
-            <path d="m17.65 17.65 1.42 1.42"/>
-            <path d="M2 12h2"/>
-            <path d="M20 12h2"/>
-            <path d="m4.93 19.07 1.42-1.42"/>
-            <path d="m17.65 6.35 1.42-1.42"/>
-            </svg>
+        <div class="control-container">
+            <button class="settings-btn">⚙️</button>
+        </div>
 
-
-            <svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#A855F7"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="moon">
-            <path d="M20.985 12.486A9 9 0 1 1 11.514 3.015a7 7 0 0 0 9.471 9.471Z"/>
-            </svg>
-        </button>
-        <button class="lab-btn">Онлайн лабораторія 🧪</button>
         <button class="subject-card history">
             <img src="Image/history-icon.webp" alt="history-icon">
             <p>Історія України</p>
@@ -68,69 +37,46 @@
             <p>Правознавство</p>
         </button>
 
-        <div class="container lab-container">
-            <header class="nav">
-                <button class="lab-close-btn close-btn ">
+        <div class="wrapper">
+
+            <div class="container history-container"></div>
+
+            <div class="container physics-container"></div>
+
+            <div class="container geography-container"></div>
+
+            <div class="container civicEducation-container"></div>
+
+            <div class="container law-container"></div>
+
+            <div class="container settings-container">
+                <button class="btn color-close-btn close-btn">
                     <div class="close-container">
                         <div class="line"></div>
                         <div class="line"></div>
                     </div>
                 </button>
-            </header>
-
-            <section id="geography-section">
-                <div class="info-container">
-                    <button class="geography-subject-btn">Географія</button>
-                    <button class="geography-paragraph-btn">§ 9</button>
+                <div class="main-color-container">
+                    <h2>Змінити фон</h2>
+                    <div class="color-container">
+                        <div class="color color1">
+                            <button class="downloadBg">+</button>
+                        </div>
+                        <div class="color color2">
+                            <button class="downloadBg">+</button>
+                        </div>
+                        <div class="color color3">
+                            <button class="downloadBg">+</button>
+                        </div>
+                        <div class="color color4">
+                            <button class="downloadBg">+</button>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="counter-container">
-                    <h2>Розрахунок кількості робочої сили</h2>
-                    <label for="Кількість зайнятих осіб">Кількість зайнятих осіб:</label>
-                    <input type="text" name="Кількість зайнятих осіб" id="busyPeople" class="geography-area">
-                    <label for="Кількість безробітніх осіб">Кількість безробітніх осіб:</label>
-                    <input type="text" name="Кількість безробітніх осіб" id="lazyPeople" class="geography-area">
-                </div>
-
-                <div class="counter-container">
-                    <h2>Розрахунок кількості зайнятих осіб в країні</h2>
-                    <label for="Кількість зайнятих осіб">Кількість зайнятих осіб:</label>
-                    <input type="text" name="Кількість зайнятих осіб" id="busyPeople2" class="geography-area">
-                    <label for="Загальне населення країни">Загальне населення країни:</label>
-                    <input type="text" name="Загальне населення країни" id="allPeople" class="geography-area">
-                </div>
-                
-                <div>
-                    <button class="geography-count-btn">Розрахувати</button>
-                    <button class="clin-btn">Очистити</button>
-                </div>
-                <div class="geography-result">Результат: ...</div>
-            </section>
-
-            <section id="physics-section">
-                <div class="info-container">
-                    <button class="physics-subject-btn">Фізика</button>
-                    <button class="physics-paragraph-btn">§ 3</button>
-                </div>
-                
-                <div class="counter-container">
-                    <h2>Перший закон Фарадея</h2>
-                    <label for="Електрохімічний еквівалент">Електрохімічний еквівалент:</label>
-                    <input type="text" name="Електрохімічний еквівалент" id="elecEkvi" class="physics-area">
-                    <label for="Електричний заряд">Електричний заряд:</label>
-                    <input type="text" name="Електричний заряд" id="elecPower" class="physics-area">
-                </div>
-                
-                <div>
-                    <button class="physics-count-btn">Розрахувати</button>
-                    <button class="clin-btn">Очистити</button>
-                </div>
-                <div class="physics-result">Результат: ...</div>
-            </section>
+            </div>
         </div>
 
-        <div class="container history-container">
-            <header class="nav">
+        <div class="nav">
                 <button class="btn close-btn">
                     <div class="close-container">
                         <div class="line"></div>
@@ -142,126 +88,21 @@
                     <button class="info-btn main-info">Основне</button>
                     <div class="bg"></div>
                 </div>
-                <button class="btn history-list-btn">
+                <button class="btn list-btn">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L18 9"
-                            stroke="rgb(230, 230, 230)"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"/>
+                        <path d="M6 9L12 15L18 9"
+                                stroke="rgb(230, 230, 230)"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"/>
                     </svg>
-                </button> 
+                </button>
                 <div class="list history-list"></div>
-            </header>
-        </div>
-
-        <div class="container physics-container">
-            <header class="nav">
-                <button class="btn close-btn">
-                    <div class="close-container">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-                </button>
-                <div class="btn-container">
-                    <button class="info-btn all-info">Усе</button>
-                    <button class="info-btn main-info">Основне</button>
-                    <div class="bg"></div>
-                </div>
-                <button class="btn physics-list-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L18 9"
-                            stroke="rgb(230, 230, 230)"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"/>
-                    </svg>
-                </button>
                 <div class="list physics-list"></div>
-            </header>
-        </div>
-
-        <div class="container geography-container">
-            <header class="nav">
-                <button class="btn close-btn">
-                    <div class="close-container">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-                </button>
-                <div class="btn-container">
-                    <button class="info-btn all-info">Усе</button>
-                    <button class="info-btn main-info">Основне</button>
-                    <div class="bg"></div>
-                </div>
-                <button class="btn geography-list-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L18 9"
-                            stroke="rgb(230, 230, 230)"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"/>
-                    </svg>
-                </button>
                 <div class="list geography-list"></div>
-            </header>
-        </div>
-
-        <div class="container civicEducation-container">
-            <header class="nav">
-                <button class="btn close-btn">
-                    <div class="close-container">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-                </button>
-                <div class="btn-container">
-                    <button class="info-btn all-info">Усе</button>
-                    <button class="info-btn main-info">Основне</button>
-                    <div class="bg"></div>
-                </div>
-                <button class="btn civicEducation-list-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L18 9"
-                            stroke="rgb(230, 230, 230)"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"/>
-                    </svg>
-                </button>
                 <div class="list civicEducation-list"></div>
-            </header>
-        </div>
-
-        <div class="container law-container">
-            <header class="nav">
-                <button class="btn close-btn">
-                    <div class="close-container">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-                </button>
-                <div class="btn-container">
-                    <button class="info-btn all-info">Усе</button>
-                    <button class="info-btn main-info">Основне</button>
-                    <div class="bg"></div>
-                </div>
-                <button class="btn law-list-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L18 9"
-                            stroke="rgb(230, 230, 230)"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"/>
-                    </svg>
-                </button>
                 <div class="list law-list"></div>
-            </header>
         </div>
     </main>
 </body>

@@ -10,45 +10,47 @@
     --icon-color: #d5d5d5;
 
     --color: #2c2520;
-    --color-dark-theme-text-primary: #f8f9fa; 
+    --border-main: rgba(0, 0, 0, 0.8);
+    --btn-geo-bg: #bef264;
+    --btn-physics-bg: #93c5fd;
+    --btn-clin-bg: #f87171;
+    --info-btn-color: #545454;
 }
 
-.container.is-dark {
-    --cards-bg: rgba(255, 255, 255, 0.08);
-    --cards-border-color: rgba(255, 255, 255, 0.12);
-    --ui-shadow-large: 0 10px 40px rgba(0, 0, 0, 0.45);
-    --ui-shadow-medium: 0 10px 30px rgba(0, 0, 0, 0.4);
-    --ui-shadow-small: 0 4px 15px rgba(0, 0, 0, 0.35);
-    --btn-hover-bg: rgba(255, 255, 255, 0.18);
-    --item-hover-bg: rgba(255, 255, 255, 0.08); 
-
-    background-color: #0b0f19; 
-    background-image: 
-        radial-gradient(circle at 15% 20%, rgba(255, 120, 70, 0.15) 0%, transparent 45%), 
-        radial-gradient(circle at 85% 80%, rgba(255, 180, 100, 0.12) 0%, transparent 50%);
-
-    color: var(--color-dark-theme-text-primary);
-}
-
-.container {
-    height: 100%;
-    width: 100%;
+.wrapper {
     position: fixed;
     top: 0;
     right: 0;
-    padding-top: 60px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
+    
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
+    
+    --bg-color: #fdf8f5;
+    --bg-image: radial-gradient(circle at 15% 20%, #38bdf8 0%, transparent 50%), 
+                radial-gradient(circle at 85% 80%, #4ade80 0%, transparent 55%);
+    
     color: var(--color);
-    background-color: #fdf8f5;
-    background-image: 
-        radial-gradient(circle at 15% 20%, #38bdf8 0%, transparent 50%),
-        radial-gradient(circle at 85% 80%, #4ade80 0%, transparent 55%);
+    background-color: var(--bg-color);
+    background-image: var(--bg-image);
     background-attachment: fixed;
-    z-index: 2;
-    transform: translateX(100%);
+    
     transition: transform 0.25s ease-in-out, background-color 0.25s, color 0.25s;
 }
 
@@ -57,20 +59,7 @@
 }
 
 .container.is-active {
-    transform: translateX(0);
-}
-
-.lab-container{
-    background-color: #fdf8f5 !important;
-    background-image: 
-        radial-gradient(circle at 15% 20%, #38bdf8 0%, transparent 50%),
-        radial-gradient(circle at 85% 80%, #4ade80 0%, transparent 55%) !important;
-    color: var(--color) !important;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-direction: column;
-    gap: 30px;
+    transform: translateX(-100%);
 }
 
 #geography-section, #physics-section {
@@ -86,43 +75,41 @@
     margin-bottom: 20px;
 }
 
-.lab-close-btn{
-    height: 40px;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(236, 21, 21);
-    border-radius: 10px;
-    border: 2px solid black;
-    border-bottom: 4px solid black;
-    cursor: pointer;
-    transition: 0.1s;
-}
-
-.lab-close-btn:active{
-    border-bottom: 2px solid black;
-    transform: translateY(3px);
-}
-
 .nav {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
     height: 60px;
-    width: 100%;
+    width: max-content;
+    background-color: var(--cards-bg);
+    border: 1px solid var(--cards-border-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    gap: 5px;
+    border-radius: 30px;
     position: fixed;
-    top: 0;
-    left: 0;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
-    z-index: 3;
+    padding: 0 10px;
+    z-index: 10;
+    transition: 0.25s;
+}
+
+.nav.is-active{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .list {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(10px);
     z-index: 2;
     min-height: 60px;
     max-height: 530px;
@@ -131,8 +118,10 @@
     overflow-y: auto;
     border-radius: 20px;
     position: fixed;
-    top: 60px;
-    right: 15px;
+    bottom: 75px;
+    left: 50%;
+    transform-origin: center bottom;
+    transform: translate(-50%, 10px) scale(0);
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -140,8 +129,7 @@
     gap: 10px;
     padding: 12px;
     background-color: var(--cards-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(4px);
     border: 1px solid var(--cards-border-color);
     box-shadow: var(--ui-shadow-medium);
     transition: 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
@@ -155,11 +143,11 @@
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
+    transform: translate(-50%, 0) scale(1);
 }
 
 .list-item {
-    opacity: 0.6;
+    opacity: 1;
     height: 50px;
     width: 100%;
     flex-shrink: 0;
@@ -174,10 +162,6 @@
     cursor: pointer;
     background-color: transparent;
     transition: 0.2s ease-in-out;
-}
-
-body.is-dark .list-item{
-    color: var(--color-dark-theme-text-primary);
 }
 
 .list-item:hover {
@@ -250,49 +234,65 @@ body.is-dark .list-item{
     font-weight: 700;
     cursor: pointer;
     z-index: 3;
-    color: #545454;
+    color: var(--info-btn-color);
     opacity: 0.6; 
-    transition: font-size 0.25s, opacity 0.2s ease, transform 0.1s ease;
+    transition: font-size 0.25s, opacity 0.2s ease, transform 0.1s ease, color 0.25s;
 }
 
-.geography-subject-btn, .geography-paragraph-btn, .physics-subject-btn, .physics-paragraph-btn, .geography-count-btn, .physics-count-btn, .clin-btn {
+.geography-subject-btn, 
+.geography-paragraph-btn, 
+.physics-subject-btn, 
+.physics-paragraph-btn, 
+.geography-count-btn, 
+.physics-count-btn, 
+.clin-btn {
     height: auto;
     width: auto;
     padding: 10px;
-    border: 2px solid black;
-    border-bottom: 7px solid black;
+    border: 2px solid var(--border-main);
+    border-bottom: 7px solid var(--border-main);
     font-size: 40px;
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
     border-radius: 15px;
-    background-color: greenyellow;
+    background-color: var(--btn-geo-bg);
+    color: inherit;
     cursor: pointer;
-    transition: 0.10s;
+    transition: 0.10s, background-color 0.25s, border-color 0.25s;
 }
 
-.physics-subject-btn, .physics-paragraph-btn{
-    background-color: rgb(129, 176, 252);
+.physics-subject-btn, 
+.physics-paragraph-btn, 
+.physics-count-btn {
+    background-color: var(--btn-physics-bg);
 }
 
-.physics-count-btn{
-    background-color: rgb(129, 176, 252);
-}
-
-.geography-count-btn, .physics-count-btn, .clin-btn {
+.geography-count-btn, 
+.physics-count-btn, 
+.clin-btn {
     font-size: 18px;
 }
 
 .clin-btn {
-    background-color: rgb(236, 21, 21);
+    background-color: var(--btn-clin-bg);
 }
 
-.geography-count-btn:active, .physics-count-btn:active, .geography-subject-btn:active, .geography-paragraph-btn:active, .physics-subject-btn:active, .physics-paragraph-btn:active, .clin-btn:active{
-    border-bottom: 2px solid black;
+.geography-count-btn:active, 
+.physics-count-btn:active, 
+.geography-subject-btn:active, 
+.geography-paragraph-btn:active, 
+.physics-subject-btn:active, 
+.physics-paragraph-btn:active, 
+.clin-btn:active {
+    border-bottom: 2px solid var(--border-main);
     transform: translateY(3px);
 }
 
-.geography-subject-btn:hover, .geography-paragraph-btn:hover, .physics-subject-btn:hover, .physics-paragraph-btn:hover{
-    border-bottom: 2px solid black;
+.geography-subject-btn:hover, 
+.geography-paragraph-btn:hover, 
+.physics-subject-btn:hover, 
+.physics-paragraph-btn:hover {
+    border-bottom: 2px solid var(--border-main);
     transform: translateY(3px);
 }
 
@@ -355,6 +355,7 @@ body.is-dark .list-item{
     flex-direction: column;
     gap: 15px;
     padding: 20px;
+    padding-bottom: 70px;
     overflow-wrap: break-word;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
@@ -410,79 +411,148 @@ body.is-dark .list-item{
     left: 2px;
     height: 95%;
     width: calc(50% - 4px);  
-    background: rgba(255, 255, 255, 0.85); 
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 12px rgba(229, 203, 186, 0.4);
+    background: var(--cards-bg); 
+    border: 1px solid var(--cards-border-color);
+    box-shadow: var(--ui-shadow-small);
     border-radius: 100px;
     z-index: 2;
     transform: translate(0, -50%);
     transition: transform 0.25s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.25s, box-shadow 0.25s, border-color 0.25s; 
 }
 
-.formul {
+.array-item{
     display: contents;
     font-weight: 900;
 }
 
-.info-container {
-    height: auto;
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    transition: 0.25s;
+.formul {
+    font-weight: 900;
 }
 
-.counter-container {
+:root {
+    --cards-shadow: rgba(0, 0, 0, 0.08);
+}
+
+.main-color-container{
     height: auto;
     width: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
 }
 
-.geography-area, .physics-area {
-    height: 50px;
-    width: 200px; 
-    border-radius: 15px;
-    text-align: center;
-    font-family: 'Nunito', sans-serif;
-    outline: none;
-    border: 2px solid black;
-    border-bottom: 7px solid black;
-    font-size: 18px;
-    font-weight: 700;
+.settings-container{
+    padding-top: 45px;
+}
+
+.color-close-btn{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+}
+
+.color-container {
+    position: relative;
+    height: 250px;
+    width: 350px;
+    background-color: var(--cards-bg);
+    border: 1px solid var(--cards-border-color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 16px;
+    box-sizing: border-box;
+    box-shadow: var(--ui-shadow-medium);
+    transition: background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+
+.color {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid var(--cards-border-color);
+    border-radius: 16px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 12px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    z-index: 1;
     cursor: pointer;
-    transition: all 0.1s;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.geography-area:focus, .physics-area:focus {
-    border-bottom: 2px solid black;
-    transform: translateY(3px);
+.color:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-.geography-result, .physics-result {
-    height: 50px;
-    width: auto; 
-    padding: 10px;
-    border: 2px solid black;
-    border-bottom: 7px solid black;
-    border-radius: 15px;
+.color1 {
+    transform-origin: top left;
+    background: radial-gradient(circle at 15% 20%, #38bdf8 0%, transparent 60%), 
+                radial-gradient(circle at 85% 80%, #4ade80 0%, #e0f2fe 100%);
 }
 
-.geography-result{
-    background-color: greenyellow;
+.color2 {
+    transform-origin: top right;
+    background: radial-gradient(circle at 15% 25%, #f472b6 0%, transparent 60%), 
+                radial-gradient(circle at 80% 75%, #fbbf24 0%, #fdf2f8 100%);
 }
 
-.physics-result{
-    background-color: rgb(129, 176, 252);
+.color3 {
+    transform-origin: bottom left;
+    background: radial-gradient(circle at 20% 20%, #c084fc 0%, transparent 60%), 
+                radial-gradient(circle at 80% 80%, #3b82f6 0%, #faf5ff 100%);
 }
 
-.all-info {
-    font-size: 20px;
+.color4 {
+    transform-origin: bottom right;
+    background: radial-gradient(circle at 10% 30%, #818cf8 0%, transparent 60%), 
+                radial-gradient(circle at 85% 70%, #2dd4bf 0%, #f0fdfa 100%);
+}
+
+.color.is-example {
+    transform: scale(1.6);
+    border-radius: 16px;
+    z-index: 5;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.color.is-selected {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.downloadBg {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    background-color: var(--cards-bg);
+    border: 1px solid var(--cards-border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    z-index: 10;
+    color: inherit;
+}
+
+.downloadBg:hover {
+    transform: scale(1.05);
+    background-color: var(--btn-hover-bg);
 }
 
 @media (max-width: 430px) {

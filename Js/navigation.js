@@ -31,6 +31,26 @@ function navigation(currentList, contentArray, currentContainer) {
     });
 }
 
+function navigationWithOneNavBlock(){
+    const listBtn = document.querySelector('.list-btn');
+    if (!listBtn) return;
+
+    listBtn.addEventListener('click', () => {
+        const currentContainer = document.querySelector('.container.is-active:not(.lab-container)');
+        if (currentContainer && currentContainer.classList.contains('is-active')){
+            const currentContainerClass = currentContainer.className.split(' ').find(cls => cls.endsWith('-container'));
+            if (!currentContainerClass) return;
+            const suffix = currentContainerClass.replace('-container', '');
+            
+            const currentList = document.querySelector(`.nav .${suffix}-list`);
+            
+            if (currentList) {
+                currentList.classList.toggle('is-active');
+            }
+        }
+    });
+}
+
 export default function callFunctionNavigation() {
     const historyList = document.querySelector('.history-list');
     const historyContainer = document.querySelector('.history-container');
@@ -47,15 +67,17 @@ export default function callFunctionNavigation() {
         !geographyList || !geographyContainer || !civicEducationList || 
         !civicEducationContainer || !lawList || !lawContainer) return;
 
-    const historyArray = Array.from(historyContainer.children);
-    const physicsArray = Array.from(physicsContainer.children);
-    const geographyArray = Array.from(geographyContainer.children);
-    const civicEducationArray = Array.from(civicEducationContainer.children);
-    const lawArray = Array.from(lawContainer.children);
+    const historyArray = Array.from(historyContainer.children).filter(child => !child.classList.contains('nav'));
+    const physicsArray = Array.from(physicsContainer.children).filter(child => !child.classList.contains('nav'));
+    const geographyArray = Array.from(geographyContainer.children).filter(child => !child.classList.contains('nav'));
+    const civicEducationArray = Array.from(civicEducationContainer.children).filter(child => !child.classList.contains('nav'));
+    const lawArray = Array.from(lawContainer.children).filter(child => !child.classList.contains('nav'));
     
     navigation(historyList, historyArray, historyContainer);
     navigation(physicsList, physicsArray, physicsContainer);
     navigation(geographyList, geographyArray, geographyContainer);
     navigation(civicEducationList, civicEducationArray, civicEducationContainer); 
     navigation(lawList, lawArray, lawContainer);
+
+    navigationWithOneNavBlock();
 }

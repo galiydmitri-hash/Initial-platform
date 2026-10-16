@@ -1,7 +1,7 @@
 function focusContainer(currentlist, currentContainer, text) {
     if (!currentlist || !currentContainer) return;
 
-    const btnContainer = currentContainer.querySelector('.btn-container');
+    const btnContainer = document.querySelector('.btn-container');
     const targetText = text.trim(); 
 
     const listArray = Array.from(currentlist.children);

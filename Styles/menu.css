@@ -11,7 +11,6 @@
     --cards-shadow-active: 0 5px 15px rgba(0, 0, 0, 0.06);
     
     --color: #2c2520;
-    --color-dark-theme-text-primary: #f8f9fa; 
 }
 
 html, body {
@@ -28,18 +27,6 @@ body {
         radial-gradient(circle at 85% 80%, #4ade80 0%, transparent 55%);
     background-attachment: fixed; 
     transition: 0.25s;
-}
-
-body.is-dark {
-    --cards-bg: rgba(255, 255, 255, 0.07);
-    --cards-border-color: rgba(255, 255, 255, 0.1);
-    --cards-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    --cards-shadow-active: 0 5px 15px rgba(0, 0, 0, 0.4);
-
-    background-color: #0b0f19; 
-    background-image: 
-        radial-gradient(circle at 15% 20%, rgba(255, 120, 70, 0.15) 0%, transparent 45%), 
-        radial-gradient(circle at 85% 80%, rgba(255, 180, 100, 0.12) 0%, transparent 50%);
 }
 
 body::-webkit-scrollbar {
@@ -90,91 +77,53 @@ p {
     transition: 0.25s;
 }
 
-p.is-dark{
-    color: var(--color-dark-theme-text-primary);
-}
-
 img {
     height: 130px; 
     width: 130px;
     object-fit: contain; 
 }
 
+.control-container{
+    height: 50px;
+    width: 50px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cards-bg);
+    border: 1px solid var(--cards-border-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 30px;
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%) scale(1.2);
+    transition: transform 0.15s;
+}
 
-.theme {
+.control-container.is-active{
+    transform: translateX(-50%) scale(1);
+}
+
+.settings-btn {
     height: 40px;
     width: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    top: 10px;
-    left: 20px;
     overflow: hidden;
-
     background-color: var(--cards-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(4px);
     border: 1px solid var(--cards-border-color);
     border-radius: 50%;
     cursor: pointer;
-
     transition: transform 0.15s,
                 background-color 0.25s,
                 box-shadow 0.25s,
                 border-color 0.25s;
 }
 
-.theme:active {
-    transform: scale(0.95);
-}
-
-.sun,
-.moon {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    transition: transform 0.25s ease;
-}
-
-.sun.is-disable {
-    transform: translateX(-100%) scale(0);
-}
-
-.moon:not(.is-active){
-    transform: translateX(100%) scale(0);
-}
-
-.sun:not(.is-disable),
-.moon.is-active {
-    transform: translateX(0) scale(1);
-}
-
-.lab-btn{
-    height: 40px;
-    width: auto;
-    padding: 10px;
-    z-index: 2;
-    position: fixed;
-    top: 10px;
-    right: 20px;
-    overflow: hidden;
-    background-color: var(--cards-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--cards-border-color);
-    border-radius: 40px;
-    cursor: pointer;
-    font-family: 'Nunito', sans-serif;
-    font-size: 15px;
-    font-weight: 700;
-    transition: 0.15s;
-}
-
-body.is-dark .lab-btn{
-    color: var(--color-dark-theme-text-primary);
-}
-
-.lab-btn:active{
+.settings-btn:active {
     transform: scale(0.95);
 }
