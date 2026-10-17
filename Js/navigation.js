@@ -1,4 +1,5 @@
 import check from "./checkingChangeForms.js";
+import listWidth from "./listWidth.js";
 
 function navigation(currentList, contentArray, currentContainer) {
     if (!currentList || !contentArray || contentArray.length === 0) return;
@@ -12,7 +13,6 @@ function navigation(currentList, contentArray, currentContainer) {
         const listItems = currentList.querySelectorAll('.list-item');
         listItems.forEach((el) => el.classList.remove('is-active'));
         item.classList.add('is-active');
-
         const targetText = item.textContent.trim();
 
         contentArray.forEach((el) => {
@@ -36,6 +36,7 @@ function navigationWithOneNavBlock(){
     if (!listBtn) return;
 
     listBtn.addEventListener('click', () => {
+        listWidth()
         const currentContainer = document.querySelector('.container.is-active:not(.lab-container)');
         if (currentContainer && currentContainer.classList.contains('is-active')){
             const currentContainerClass = currentContainer.className.split(' ').find(cls => cls.endsWith('-container'));

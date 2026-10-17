@@ -111,28 +111,33 @@
     opacity: 0;
     pointer-events: none;
     z-index: 2;
-    min-height: 60px;
-    max-height: 530px;
-    width: 210px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    border-radius: 20px;
+    height: 60px;
     position: fixed;
-    bottom: 75px;
+    bottom: 65px;
     left: 50%;
-    transform-origin: center bottom;
-    transform: translate(-50%, 10px) scale(0);
+    translate: -50% 10px;
+    scale: 0;
+    transform-origin: right bottom;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex-direction: column;
     gap: 10px;
-    padding: 12px;
+    padding: 0 5px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 20px;
     background-color: var(--cards-bg);
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
     border: 1px solid var(--cards-border-color);
     box-shadow: var(--ui-shadow-medium);
-    transition: 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.25s, border-color 0.25s, box-shadow 0.25s;
+    transition: 
+        translate 0.15s,
+        scale 0.15s,
+        opacity 0.25s ease,
+        background-color 0.25s, 
+        border-color 0.25s, 
+        box-shadow 0.25s;
 }
 
 .list::-webkit-scrollbar {
@@ -143,13 +148,15 @@
     visibility: visible;
     opacity: 1;
     pointer-events: auto;
-    transform: translate(-50%, 0) scale(1);
+    translate: -50% 0;
+    scale: 1;
 }
 
 .list-item {
     opacity: 1;
     height: 50px;
-    width: 100%;
+    width: auto;
+    padding: 0 20px;
     flex-shrink: 0;
     display: flex;
     color: var(--color);
