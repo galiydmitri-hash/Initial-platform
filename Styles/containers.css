@@ -676,6 +676,46 @@
     pointer-events: none; 
 }
 
+.fast-list {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    gap: 12px; 
+    padding: 15px; 
+    border-radius: 20px;
+    background-color: var(--cards-bg);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--cards-border-color);
+    box-sizing: border-box; 
+}
+
+.fast-list.is-active{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.fast-list > * {
+    flex-grow: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 8px 16px;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+
 @media (max-width: 430px) {
     .btn-container {
         width: 240px;

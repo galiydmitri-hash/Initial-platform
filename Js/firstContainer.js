@@ -41,7 +41,7 @@ export default function callFocusContainer(){
 
     focusContainer(historyList, historyContainer, "ВСТУП. Модерна доба")
     focusContainer(physicsList, physicsContainer, "§ 1")
-    focusContainer(geographyList, geographyContainer, "§ 8")
+    focusContainer(geographyList, geographyContainer, "§ 3")
     focusContainer(civicEducationList, civicEducationContainer, "§ 6")
     focusContainer(lawList, lawContainer, "§ 1")
 }

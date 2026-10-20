@@ -40,11 +40,30 @@ export default function openAndCloseContainer(){
             wrapperList.classList.add('is-visible')
         }
 
-        subjectHistory?.addEventListener('click', () => activateContainer(historyContainer))
-        subjectPhysics?.addEventListener('click', () => activateContainer(physicsContainer))
-        subjectGeography?.addEventListener('click', () => activateContainer(geographyContainer))
-        subjectCivicEducation?.addEventListener('click', () => activateContainer(civicEducationContainer))
-        subjectLaw?.addEventListener('click', () => activateContainer(lawContainer))
+        subjectHistory?.addEventListener('click', (event) => {
+            if (event.target === subjectHistory.querySelector('.paragraph-counter')) return
+            activateContainer(historyContainer)
+        })
+
+        subjectPhysics?.addEventListener('click', (event) => {
+            if (event.target === subjectPhysics.querySelector('.paragraph-counter')) return
+            activateContainer(physicsContainer)
+        })
+
+        subjectGeography?.addEventListener('click', (event) => {
+            if (event.target === subjectGeography.querySelector('.paragraph-counter')) return
+            activateContainer(geographyContainer)
+        })
+
+        subjectCivicEducation?.addEventListener('click', (event) => {
+            if (event.target === subjectCivicEducation.querySelector('.paragraph-counter')) return
+            activateContainer(civicEducationContainer)
+        })
+        
+        subjectLaw?.addEventListener('click', (event) => {
+            if (event.target === subjectLaw.querySelector('.paragraph-counter')) return
+            activateContainer(lawContainer)
+        })
 
         closeBtn.forEach(btn => btn.addEventListener('click', () => {
             containers.forEach(c => c?.classList.remove('is-active'));
