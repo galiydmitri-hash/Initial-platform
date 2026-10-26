@@ -1,0 +1,115 @@
+:root {
+    --bg-primary: #061329;
+    --bg-secondary: #0b1d3b;
+    --bg-card: #10264a;
+
+    --color-primary: #4f46ff;
+    --color-secondary: #258bff;
+    --color-accent: #00d4ff;
+
+    --text-primary: #f4f7ff;
+    --text-secondary: #7d99cc;
+
+    --border-color: rgba(90, 145, 230, 0.25);
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+    --gradient-primary: linear-gradient(135deg, #645bff, #247bff);
+    --gradient-card: linear-gradient(145deg, #10264a, #0a1933);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 28px;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    --transition: 0.25s ease;
+
+    --font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.global-container{
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 100px;
+    transition: var(--transition);
+}
+
+.global-container.is-active{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.saved-title, .note-title, .profile-title{
+    font-size: 25px;
+    align-self: flex-start;
+    margin-left: 20px;
+}
+
+.search-container{
+    height: 40px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    gap: 10px;
+}
+
+.search-area{
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    font-size: 18px;
+    padding-left: 20px;
+    color: var(--text-secondary);
+    outline: none;;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.search-area:focus{
+    color: var(--text-primary);
+}
+
+.search-area::placeholder{
+    color: var(--text-secondary);
+}
+
+.saved-list{
+    height: 100%;
+    width: 95%;
+    border-radius: var(--radius-md);
+    padding: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.saved-list::-webkit-scrollbar{
+    display: none;
+}

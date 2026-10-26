@@ -1,0 +1,217 @@
+:root {
+    --bg-primary: #061329;
+    --bg-secondary: #0b1d3b;
+    --bg-card: #10264a;
+
+    --color-primary: #4f46ff;
+    --color-secondary: #258bff;
+    --color-accent: #00d4ff;
+
+    --text-primary: #f4f7ff;
+    --text-secondary: #ababab;
+
+    --border-color: rgba(90, 145, 230, 0.25);
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+    --gradient-primary: linear-gradient(135deg, #645bff, #247bff);
+    --gradient-card: linear-gradient(145deg, #10264a, #0a1933);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 28px;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    --transition: 0.25s ease;
+
+    --font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding-bottom: 95px;
+    background-color: var(--bg-primary);
+    font-family: var(--font-family);
+    color: var(--text-primary);
+}
+
+body.is-lock{
+    overflow: hidden; 
+}
+
+
+main{
+    padding: 5px;
+}
+
+header{
+    height: 400px;
+    width: 100%;
+}
+
+.main-expretion-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    touch-action: pan-y; 
+}
+
+.expretion-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+    will-change: transform; 
+}
+
+.expretion {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden; 
+}
+
+.expretion img {
+    display: block;
+    width: 101%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.expretion::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    box-shadow: inset 0 -40px 30px -10px var(--bg-primary);
+    pointer-events: none; 
+}
+
+.subject-list{
+    height: 300px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));;
+    place-items: center;
+    gap: 10px;
+    border-radius: var(--radius-md);
+}
+
+.subject-card{
+    height: 90px;
+    width: 170px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    font-family: var(--font-family);
+    font-size: 12.5px;
+    color: var(--text-primary);
+    border: none;
+    outline: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+}
+
+.subject-card-secondary-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2.5px;
+}
+
+.paragraph-kl{
+    color: #ababab;
+    font-size: 10px;
+}
+
+.img-container{
+    height: 60px;
+    width: 60px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.menu{
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    height: 70px;
+    width: 95%;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    justify-self: center;
+    margin-top: 20px;
+    border-radius: 30px;
+    z-index: 3;
+    transition: var(--transition);
+}
+
+.menu.is-disable{
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-btn, .home-btn{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-primary);
+}
+
+.icon{
+    height: 30px;
+    width: 30px;
+    transition: var(--transition);
+}
+
+.icon.is-selected{
+    transform: scale(1.2);
+    color: var(--color-accent);
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}

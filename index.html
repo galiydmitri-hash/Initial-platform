@@ -1,131 +1,362 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles/menu.css">
-    <link rel="stylesheet" href="Styles/containers.css">
+    <link rel="stylesheet" href="Styles/home.css">
+    <link rel="stylesheet" href="Styles/main.css">
+    <link rel="stylesheet" href="Styles/container.css">
+    <link rel="stylesheet" href="Styles/saved.css">
+    <link rel="stylesheet" href="Styles/note.css">
+    <link rel="stylesheet" href="Styles/profile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=SN+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>Навчальна платформа</title>
 </head>
 <body>
-    <main>
-        <div class="control-container">
-            <button class="settings-btn">⚙️</button>
-        </div>
-
-        <div class="card-list">
-            <button class="subject-card history" data-subject="history">
-                <img src="Image/history-icon.webp" alt="history-icon">
-                <p>Історія України</p>
-                <div class="paragraph-counter"></div>
-                <div class="fast-list"></div>
-            </button>
-            <button class="subject-card physics" data-subject="physics">
-                <img src="Image/physics-icon.webp" alt="physics-icon">
-                <p>Фізика</p>
-                <div class="paragraph-counter"></div>
-                <div class="fast-list"></div>
-            </button>
-            <button class="subject-card geography" data-subject="geography">
-                <img src="Image/geography-icon.webp" alt="geography-icon">
-                <p>Географія</p>
-                <div class="paragraph-counter"></div>
-                <div class="fast-list"></div>
-            </button>
-            <button class="subject-card civicEducation" data-subject="civicEducation">
-                <img src="Image/civicEducation-icon.webp" alt="civicEducation-icon">
-                <p>Громадянська освіта</p>
-                <div class="paragraph-counter"></div>
-                <div class="fast-list"></div>
-            </button>
-            <button class="subject-card law" data-subject="law">
-                <img src="Image/law-icon.webp" alt="law-icon">
-                <p>Правознавство</p>
-                <div class="paragraph-counter"></div>
-                <div class="fast-list"></div>
-            </button>
-        </div>
-
-        <div class="wrapper-list">
-            <button class="open-list-btn">
-                <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="20" height="20" fill="#2c2520">
-                    <path d="M3 4h2v2H3V4zm4 2v-2h14v2H7zM3 11h2v2H3v-2zm4 2v-2h14v2H7zM3 18h2v2H3v-2zm4 2v-2h14v2H7z"/>
-                </svg>
-            </button>
-            <div class="subject-list"></div>
-        </div>
-
-        <div class="wrapper">
-
-            <div class="container history-container"></div>
-
-            <div class="container physics-container"></div>
-
-            <div class="container geography-container"></div>
-
-            <div class="container civicEducation-container"></div>
-
-            <div class="container law-container"></div>
-
-            <div class="container settings-container">
-                <button class="btn color-close-btn close-btn">
-                    <div class="close-container">
-                        <div class="line"></div>
-                        <div class="line"></div>
+        <header>
+            <div class="main-expretion-container">
+                <div class="expretion-container"><div class="expretion"><img src="Photos/start.png" alt=""></div><div class="expretion"><img src="Photos/2_mid_climb.png" alt=""></div><div class="expretion"><img src="Photos/3_near_summit.png" alt=""></div><div class="expretion"><img src="Photos/4_summit.png" alt=""></div></div>
+            </div>
+        </header>
+        <main>
+            <h2>Предмети</h2>
+            <div class="subject-list">
+                <button class="subject-card" data-subject="history">
+                    <div class="img-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                            <g stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M13 24 32 14 51 24Z"/>
+                                <path d="M16 28H48M13 49H51M17 52H47"/>
+                                <path d="M19 29V46M27 29V46M37 29V46M45 29V46"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="subject-card-secondary-container">
+                        <p>Історія України</p>
+                        <p class="paragraph-kl"></p>
                     </div>
                 </button>
-                <div class="main-color-container">
-                    <h2>Змінити фон</h2>
-                    <div class="color-container">
-                        <div class="color color1">
-                            <button class="downloadBg">+</button>
+                <button class="subject-card" data-subject="physics">
+                    <div class="img-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                            <g stroke="#FFF" stroke-width="2.2">
+                                <ellipse cx="32" cy="32" rx="21" ry="9"/>
+                                <ellipse cx="32" cy="32" rx="21" ry="9" transform="rotate(60 32 32)"/>
+                                <ellipse cx="32" cy="32" rx="21" ry="9" transform="rotate(120 32 32)"/>
+                            </g>
+                            <circle cx="32" cy="32" r="3.5" fill="#FFF"/>
+                        </svg>
+                    </div>
+                    <div class="subject-card-secondary-container">
+                        <p>Фізика</p>
+                        <p class="paragraph-kl"></p>
+                    </div>
+                </button>
+                <button class="subject-card" data-subject="geography">
+                    <div class="img-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                            <g stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="32" cy="32" r="20"/>
+                                <path d="M12 32H52M32 12C22 22 22 42 32 52"/>
+                                <path d="M32 12C42 22 42 42 32 52"/>
+                                <path d="M15 22H49M15 42H49"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="subject-card-secondary-container">
+                        <p>Географія</p>
+                        <p class="paragraph-kl"></p>
+                    </div>
+                </button>
+                <button class="subject-card" data-subject="civicEducation">
+                    <div class="img-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                            <g stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="32" cy="21" r="7"/>
+                                <circle cx="16" cy="27" r="5"/>
+                                <circle cx="48" cy="27" r="5"/>
+                                <path d="M19 48V43C19 36 24 32 32 32S45 36 45 43V48Z"/>
+                                <path d="M7 46V42C7 37 10 34 16 34"/>
+                                <path d="M57 46V42C57 37 54 34 48 34"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="subject-card-secondary-container">
+                        <p>Гром. освіта</p>
+                        <p class="paragraph-kl"></p>
+                    </div>
+                </button>
+                <button class="subject-card" data-subject="law">
+                    <div class="img-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                            <g stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M32 13V49M20 49H44M25 18H39"/>
+                                <path d="M32 16 13 24M32 16 51 24"/>
+                                <path d="M13 24 7 37H19ZM51 24 45 37H57Z"/>
+                                <path d="M7 37Q13 44 19 37M45 37Q51 44 57 37"/>
+                                <path d="M24 53H40"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="subject-card-secondary-container">
+                        <p>Правознавство</p>
+                        <p class="paragraph-kl"></p>
+                    </div>
+                </button>
+            </div>
+
+            <div class="wrapper">
+                <div class="container" data-subject="history-container">
+                    <div class="control-container">
+                        <button class="close-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" style="height: 40px; width: 40px;">
+                                <path
+                                    d="M38 14 20 32 38 50"
+                                    stroke="#f4f7ff"
+                                    stroke-width="4"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        <p>Історія України</p>
+                    </div>
+                    <div class="subject-name-container">
+                        <div class="subject-img-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                                <g stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M13 24 32 14 51 24Z"/>
+                                    <path d="M16 28H48M13 49H51M17 52H47"/>
+                                    <path d="M19 29V46M27 29V46M37 29V46M45 29V46"/>
+                                </g>
+                            </svg>
                         </div>
-                        <div class="color color2">
-                            <button class="downloadBg">+</button>
-                        </div>
-                        <div class="color color3">
-                            <button class="downloadBg">+</button>
-                        </div>
-                        <div class="color color4">
-                            <button class="downloadBg">+</button>
+                        <div class="subject-main-info-container">
+                            <p>Історія України</p>
+                            <div class="paragraph-counter"></div>
                         </div>
                     </div>
+                    <div class="topic-list"></div>
+                    <div class="subject-container" data-container="history-subject-container"></div>
+                </div>
+                <div class="container" data-subject="physics-container">
+                    <div class="control-container">
+                        <button class="close-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" style="height: 40px; width: 40px;">
+                                <path
+                                    d="M38 14 20 32 38 50"
+                                    stroke="#f4f7ff"
+                                    stroke-width="4"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        <p>Фізика</p>
+                    </div>
+                    <div class="subject-name-container">
+                        <div class="subject-img-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                                <g stroke="#FFF" stroke-width="2.2">
+                                    <ellipse cx="32" cy="32" rx="21" ry="9"/>
+                                    <ellipse cx="32" cy="32" rx="21" ry="9" transform="rotate(60 32 32)"/>
+                                    <ellipse cx="32" cy="32" rx="21" ry="9" transform="rotate(120 32 32)"/>
+                                </g>
+                                <circle cx="32" cy="32" r="3.5" fill="#FFF"/>
+                            </svg>
+                        </div>
+                        <div class="subject-main-info-container">
+                            <p>Фізика</p>
+                            <div class="paragraph-counter"></div>
+                        </div>
+                    </div>
+                    <div class="topic-list"></div>
+                    <div class="subject-container"></div>
+                </div>
+                <div class="container" data-subject="geography-container">
+                    <div class="control-container">
+                        <button class="close-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" style="height: 40px; width: 40px;">
+                                <path
+                                    d="M38 14 20 32 38 50"
+                                    stroke="#f4f7ff"
+                                    stroke-width="4"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        <p>Географія</p>
+                    </div>
+                    <div class="subject-name-container">
+                        <div class="subject-img-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                                <g stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="32" cy="32" r="20"/>
+                                    <path d="M12 32H52M32 12C22 22 22 42 32 52"/>
+                                    <path d="M32 12C42 22 42 42 32 52"/>
+                                    <path d="M15 22H49M15 42H49"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="subject-main-info-container">
+                            <p>Географія</p>
+                            <div class="paragraph-counter"></div>
+                        </div>
+                    </div>
+                    <div class="topic-list"></div>
+                    <div class="subject-container"></div>
+                </div>
+                <div class="container" data-subject="civicEducation-container">
+                    <div class="control-container">
+                        <button class="close-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" style="height: 40px; width: 40px;">
+                                <path
+                                    d="M38 14 20 32 38 50"
+                                    stroke="#f4f7ff"
+                                    stroke-width="4"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        <p>Гром. освіта</p>
+                    </div>
+                    <div class="subject-name-container">
+                        <div class="subject-img-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                                <g stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="32" cy="21" r="7"/>
+                                    <circle cx="16" cy="27" r="5"/>
+                                    <circle cx="48" cy="27" r="5"/>
+                                    <path d="M19 48V43C19 36 24 32 32 32S45 36 45 43V48Z"/>
+                                    <path d="M7 46V42C7 37 10 34 16 34"/>
+                                    <path d="M57 46V42C57 37 54 34 48 34"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="subject-main-info-container">
+                            <p>Гром. освіта</p>
+                            <div class="paragraph-counter"></div>
+                        </div>
+                    </div>
+                    <div class="topic-list"></div>
+                    <div class="subject-container"></div>
+                </div>
+                <div class="container" data-subject="law-container">
+                    <div class="control-container">
+                        <button class="close-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" style="height: 40px; width: 40px;">
+                                <path
+                                    d="M38 14 20 32 38 50"
+                                    stroke="#f4f7ff"
+                                    stroke-width="4"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        <p>Правознавство</p>
+                    </div>
+                    <div class="subject-name-container">
+                        <div class="subject-img-container">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+                                <g stroke="#FFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M32 13V49M20 49H44M25 18H39"/>
+                                    <path d="M32 16 13 24M32 16 51 24"/>
+                                    <path d="M13 24 7 37H19ZM51 24 45 37H57Z"/>
+                                    <path d="M7 37Q13 44 19 37M45 37Q51 44 57 37"/>
+                                    <path d="M24 53H40"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="subject-main-info-container">
+                            <p>Правознавство</p>
+                            <div class="paragraph-counter"></div>
+                        </div>
+                    </div>
+                    <div class="topic-list"></div>
+                    <div class="subject-container"></div>
                 </div>
             </div>
-        </div>
 
-        <div class="nav">
-                <button class="btn close-btn">
-                    <div class="close-container">
-                        <div class="line"></div>
-                        <div class="line"></div>
-                    </div>
-                </button>
-                <div class="btn-container">
-                    <button class="info-btn all-info">Усе</button>
-                    <button class="info-btn main-info">Основне</button>
-                    <div class="bg"></div>
+            <div class="global-container" data-switch="saved-container">
+                <p class="saved-title">Збережені параграфи</p>
+                <div class="search-container">
+                    <input type="text" class="search-area" placeholder="Пошук...">
                 </div>
-                <button class="btn list-btn">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 9L12 15L18 9"
-                                stroke="rgb(230, 230, 230)"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"/>
+                <div class="saved-list"></div>
+                <div class="saved-container"></div>
+            </div>
+
+            <div class="global-container" data-switch="notes-container">
+                <p class="note-title">Нотатки</p>
+                <div class="note-container">
+                    <input type="text" class="note-area">
+                    <button class="note-btn">
+                        <svg xmlns="http://w3.org" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="M12 5v14" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="note-list"></div>
+            </div>
+
+            <div class="global-container" data-switch="profile-container">
+                <p class="profile-title">Профіль</p>
+                <div class="profile-container">
+                    <div class="profile-data">
+                        <img src="Photos/imgonline-com-ua-Resize-zVWtr2AJ8GMb.jpg" class="profile-foto">
+                        <div class="data">
+                            <p class="name">Ім'я: Галій Дмитро</p>
+                            <p class="current-age"></p>
+                        </div>
+                    </div>
+
+                    <div class="array-info">
+                        <div class="all-saved"></div>
+                        <div class="all-note"></div>
+                    </div>
+
+                    <div class="last-note"></div>
+                </div>
+            </div>
+
+            <div class="menu">
+                <button class="home-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="icon is-selected">
+                        <path d="M5 29 32 7 59 29 54 35 49 31V55H36V40H28V55H15V31L10 35Z"
+                            fill="currentColor" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <div class="list history-list"></div>
-                <div class="list physics-list"></div>
-                <div class="list geography-list"></div>
-                <div class="list civicEducation-list"></div>
-                <div class="list law-list"></div>
-        </div>
-    </main>
+                <button class="menu-btn" data-switch="saved">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="icon">
+                        <path d="M19 9H45C47.2 9 49 10.8 49 13V56L32 44 15 56V13C15 10.8 16.8 9 19 9Z"
+                            fill="currentColor"/>
+                        <path d="M23 19H41M23 26H41"
+                            stroke="#10264a" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="menu-btn" data-switch="notes">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="icon">
+                        <path d="M16 6H39L52 19V54C52 56.2 50.2 58 48 58H16C13.8 58 12 56.2 12 54V10C12 7.8 13.8 6 16 6Z"
+                            fill="currentColor"/>
+                        <path d="M39 6V19H52" fill="none" stroke="#10264a" stroke-width="3" stroke-linejoin="round"/>
+                        <path d="M22 30H42M22 38H42M22 46H36"
+                            stroke="#202033" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <button class="menu-btn" data-switch="profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="icon">
+                        <circle cx="32" cy="20" r="13" fill="currentColor"/>
+                        <path d="M7 57C7 43 17 35 32 35S57 43 57 57Z" fill="currentColor"/>
+                    </svg>
+                </button>
+            </div>
+        </main>
 </body>
 <script type="module" src="Js/index.js"></script>
 </html>

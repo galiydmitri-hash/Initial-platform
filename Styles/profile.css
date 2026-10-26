@@ -1,0 +1,120 @@
+:root {
+    --bg-primary: #061329;
+    --bg-secondary: #0b1d3b;
+    --bg-card: #10264a;
+
+    --color-primary: #4f46ff;
+    --color-secondary: #258bff;
+    --color-accent: #00d4ff;
+
+    --text-primary: #f4f7ff;
+    --text-secondary: #7d99cc;
+
+    --border-color: rgba(90, 145, 230, 0.25);
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+    --gradient-primary: linear-gradient(135deg, #645bff, #247bff);
+    --gradient-card: linear-gradient(145deg, #10264a, #0a1933);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 28px;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    --transition: 0.25s ease;
+
+    --font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.profile-container{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: var(--radius-md);
+}
+
+.profile-container::-webkit-scrollbar{
+    display: none;
+}
+
+.profile-data{
+    height: 150px;
+    width: 100%;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.data{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2.5px;
+}
+
+.name{
+    font-size: 17px;
+}
+
+.current-age{
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+
+.array-info{
+    height: 100px;
+    width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.all-saved, .all-note{
+    height: 100%;
+    width: 50%;
+    padding: 0 10px;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.last-note{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.profile-foto{
+    height: 125px;
+    width: 125px;
+    border-radius: 100%;
+}

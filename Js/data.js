@@ -9,6 +9,8 @@ function cursiva(text){
 export const historyData = [
 {
 id: 1,
+subject: "history",
+translatedSubject: "Історія України",
 title: "ВСТУП. Модерна доба",
 mainContent: `${highlighting('Модерна доба')} — період історії України від кінця XVIII ст. до сьогодення.
 
@@ -35,6 +37,8 @@ mainContent: `${highlighting('Модерна доба')} — період іст
 },
 {   
     id: 2,
+    subject: "history",
+    translatedSubject: "Історія України",
     title: "§ 2",
     mainContent: `${highlighting('Генерал-губернаторство')} — велика адміністративна територія, яка об'єднувала кілька губерній.
 
@@ -79,6 +83,8 @@ mainContent: `${highlighting('Модерна доба')} — період іст
 },
 {   
     id: 3,
+    subject: "history",
+    translatedSubject: "Історія України",
     title: "§ 3",
     mainContent: `${highlighting('Задунайська Січ')} — козацька організація, створена запорожцями на території Османської імперії після ліквідації Запорозької Січі.
 
@@ -107,6 +113,8 @@ mainContent: `${highlighting('Модерна доба')} — період іст
 },
 {   
     id: 4,
+    subject: "history",
+    translatedSubject: "Історія України",
     title: "§ 4-5",
     mainContent: `${highlighting('Кріпацтво')} — система, за якої селяни були особисто залежними від поміщиків і прикріпленими до землі.
 
@@ -174,6 +182,8 @@ mainContent: `${highlighting('Модерна доба')} — період іст
 },
 {
     id: 5,
+    subject: "history",
+    translatedSubject: "Історія України",
     title: "§ 6",
     mainContent: `${highlighting('Українське національне відродження')} — процес пробудження національної самосвідомості українців наприкінці XVIII — на початку XX ст.
 
@@ -206,6 +216,8 @@ mainContent: `${highlighting('Модерна доба')} — період іст
 },
 {
     id: 6, 
+    subject: "history",
+    translatedSubject: "Історія України",
     title: "§ 7",
     mainContent: `${highlighting('«Українське питання»')} — комплекс проблем, пов’язаних зі становищем українських земель у складі Російської імперії, правами українців, розвитком їхньої мови, культури та прагненням до національного самовизначення.
     
@@ -242,6 +254,8 @@ mainContent: `${highlighting('Модерна доба')} — період іст
 export const physicsData = [
 {
 id: 1,
+subject: "physics",
+translatedSubject: "Фізика",
 title: "§ 1",
 mainContent: `${highlighting('Електричний струм у металах')} — упорядкований рух вільних електронів під дією електричного поля.
 
@@ -259,6 +273,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 },
 {
     id: 2,
+    subject: "physics",
+    translatedSubject: "Фізика",
     title: "§ 2",
     mainContent: `${highlighting('Електроліти')} — речовини, розчини або розплави яких проводять електричний струм завдяки руху йонів.
 
@@ -285,6 +301,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 },
 {
     id: 3,
+    subject: "physics",
+    translatedSubject: "Фізика",
     title: "§ 3",
     mainContent: `${highlighting('Закон Фарадея для електролізу')} — маса речовини, що виділяється на електроді, прямо пропорційна силі струму та часу його проходження.
 
@@ -315,6 +333,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 },
 {
     id: 4,
+    subject: "physics",
+    translatedSubject: "Фізика",
     title: "§ 4",
     mainContent: `${highlighting('Газ')} — за звичайних умов погано проводить струм, оскільки в ньому дуже мало вільних заряджених частинок.
 
@@ -335,6 +355,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 },
 {
     id: 5,
+    subject: "physics",
+    translatedSubject: "Фізика",
     title: "§ 5",
     mainContent: `${highlighting('Самостійний газовий розряд')} — електричний розряд, який підтримує себе завдяки процесам йонізації всередині газу.
     
@@ -359,6 +381,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 },
 {
     id: 6,
+    subject: "physics",
+    translatedSubject: "Фізика",
     title: "§ 6",
     mainContent: `${highlighting('Вакуум')} — простір, у якому міститься дуже мало частинок речовини.
 
@@ -379,6 +403,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 },
 {
     id: 7,
+    subject: "physics",
+    translatedSubject: "Фізика",
     title: "§ 7",
     mainContent: `${highlighting('Напівпровідники')} — речовини, електропровідність яких займає проміжне положення між провідниками та діелектриками.
 
@@ -401,6 +427,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 },
 {
     id: 8,
+    subject: "physics",
+    translatedSubject: "Фізика",
     title: "§ 8",
     mainContent: `${highlighting('Домішкова провідність')} — провідність напівпровідника, яка виникає або значно змінюється через додавання домішок.
 
@@ -429,6 +457,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 },
 {
     id: 9,
+    subject: "physics",
+    translatedSubject: "Фізика",
     title: "§ 9",
     mainContent: `${highlighting('Постійні магніти')} — тіла, які тривалий час зберігають свої магнітні властивості.
 
@@ -462,6 +492,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 },
 {
     id: 10,
+    subject: "physics",
+    translatedSubject: "Фізика",
     title: "§ 10",
     mainContent: `${highlighting('Магнітна індукція (B)')}— векторна фізична величина, яка характеризує силову дію магнітного поля. Одиниця магнітної індукції в СІ — тесла (Тл), названа на честь Ніколи Тесли.
     
@@ -497,6 +529,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 },
 {
     id: 11,
+    subject: "physics",
+    translatedSubject: "Фізика",
     title: "§ 11",
     mainContent: `${highlighting('Правило свердлика')} — правило для визначення напрямку ліній магнітної індукції магнітного поля провідника зі струмом: якщо вкручувати свердлик за напрямком струму, то напрямок обертання його ручки вкаже напрямок магнітних ліній.
     
@@ -523,6 +557,8 @@ mainContent: `${highlighting('Електричний струм у метала�
 export const geographyData = [
   {
     id: 1,
+    subject: "geography",
+    translatedSubject: "Географія",
     title: "§ 3",
     mainContent: `${highlighting('Демографія')} — наука, що вивчає закономірності відтворення населення, його чисельність, склад, розміщення та зміну.
 
@@ -542,6 +578,8 @@ export const geographyData = [
   },
   {
     id: 2,
+    subject: "geography",
+    translatedSubject: "Географія",
     title: "§ 4",
     mainContent: `${highlighting('Природний рух населення')} — зміна чисельності населення в результаті природних процесів народження та смерті.
 
@@ -571,6 +609,8 @@ export const geographyData = [
   },
   {
     id: 3,
+    subject: "geography",
+    translatedSubject: "Географія",
     title: "§ 5",
     mainContent: `${highlighting('Статево-вікова структура')} — співвідношення кількості осіб різних статей та вікових груп у загальній чисельності населення.
 
@@ -590,6 +630,8 @@ export const geographyData = [
   },
   {
     id: 4,
+    subject: "geography",
+    translatedSubject: "Географія",
     title: "§ 6",
     mainContent: `${highlighting('Міграція (механічний рух населення)')} — переміщення людей через кордони тих чи інших територій зі зміною місця проживання назавжди або на певний час.
 
@@ -619,6 +661,8 @@ export const geographyData = [
   },
   {
     id: 5,
+    subject: "geography",
+    translatedSubject: "Географія",
     title: "§ 7",
     mainContent: `${highlighting('Демографічна політика')} — система адміністративних, економічних, пропагандистських та інших заходів, за допомогою яких держава впливає на демографічні процеси (насамперед на народжуваність) у бажаному напрямку.
 
@@ -640,6 +684,8 @@ export const geographyData = [
   },
   {
     id: 6,
+    subject: "geography",
+    translatedSubject: "Географія",
     title: "§ 8",
     mainContent: `${highlighting('Етнос')} — стійка спільнота людей, яка має спільну культуру, мову, традиції та відчуття самосвідомості.
 
@@ -690,6 +736,8 @@ export const geographyData = [
   },
   {
     id: 7,
+    subject: "geography",
+    translatedSubject: "Географія",
     title: "§ 9",
     mainContent: `${highlighting('Трудові ресурси')} — частина населення, яка здатна працювати в різних сферах діяльності. До них належать переважно люди працездатного віку, а також окремі працюючі підлітки та люди пенсійного віку.
 
@@ -745,6 +793,8 @@ export const geographyData = [
 export const civicEducationData = [
 {
 id: 1,
+subject: "civicEducation",
+translatedSubject: "Гром. освіта",
 title: "§ 6",
 mainContent: `${highlighting('Державна влада')} — це як «керівництво» країни. Це група людей та організацій, які встановлюють правила для всіх і стежать, щоб у країні був порядок.
 Приклад: Як директор і вчителі в школі встановлюють правила для учнів, так державна влада встановлює правила для всіх громадян країни.
@@ -790,6 +840,8 @@ mainContent: `${highlighting('Державна влада')} — це як «к�
 },
 {
     id: 2,
+    subject: "civicEducation",
+    translatedSubject: "Гром. освіта",
     title: "§ 7",
     mainContent: `${highlighting('Участь в управлінні державними справами')} — діяльність громадян, спрямована на вплив на рішення державної влади та контроль за її діяльністю. Це право закріплене у статті 38 Конституції України.
     
@@ -825,6 +877,8 @@ mainContent: `${highlighting('Державна влада')} — це як «к�
 export const lawData = [
 {
 id: 1,
+subject: "law",
+translatedSubject: "Правознавство",
 title: "§ 1",
 mainContent: `${highlighting('Право')} — це система загальнообов’язкових правил (норм), які встановлює та захищає держава.
 
@@ -871,6 +925,8 @@ mainContent: `${highlighting('Право')} — це система загаль
 },
 {
     id: 3,
+    subject: "law",
+    translatedSubject: "Правознавство",
     title: "§ 3",
     mainContent: `${highlighting('Джерело права')} — це форма, у якій держава записує та закріплює юридичні правила.
 
@@ -897,6 +953,8 @@ mainContent: `${highlighting('Право')} — це система загаль
 },
 {
     id: 4,
+    subject: "law",
+    translatedSubject: "Правознавство",
     title: "§ 4",
     mainContent: `${highlighting('Правовідносини')} — це суспільні відносини, врегульовані нормами права (коли люди вступають у взаємодію за законами).
 
@@ -927,6 +985,8 @@ mainContent: `${highlighting('Право')} — це система загаль
 },
 {
     id: 5,
+    subject: "law",
+    translatedSubject: "Правознавство",
     title: "§ 5",
     mainContent: `${highlighting('Правопорушення')} — це протиправне, винне діяння (дія чи бездіяльність) дієздатної особи, за яке передбачено покарання.
 
@@ -961,6 +1021,8 @@ mainContent: `${highlighting('Право')} — це система загаль
 },
 {
     id: 6,
+    subject: "law",
+    translatedSubject: "Правознавство",
     title: "§ 6",
     mainContent: `${highlighting('Юридична відповідальність')} — передбачене законом застосування до правопорушника заходів державного примусу, що можуть полягати в обмеженні або позбавленні певних прав і благ (грошей, майна, свободи).
 
@@ -1024,6 +1086,8 @@ mainContent: `${highlighting('Право')} — це система загаль
 },
 {
     id: 7,
+    subject: "law",
+    translatedSubject: "Правознавство",
     title: "§ 7",
     mainContent: `${highlighting('Конституція')} — Основний Закон держави, який визначає суспільний і державний лад, права, свободи та обов’язки людини, систему органів влади й основні принципи функціонування держави.
     

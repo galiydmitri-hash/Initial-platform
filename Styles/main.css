@@ -1,0 +1,208 @@
+:root {
+    --bg-primary: #061329;
+    --bg-secondary: #0b1d3b;
+    --bg-card: #10264a;
+
+    --color-primary: #4f46ff;
+    --color-secondary: #258bff;
+    --color-accent: #00d4ff;
+
+    --text-primary: #f4f7ff;
+    --text-secondary: #95baff;
+
+    --border-color: rgba(90, 145, 230, 0.25);
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+    --gradient-primary: linear-gradient(135deg, #645bff, #247bff);
+    --gradient-card: linear-gradient(145deg, #10264a, #0a1933);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 28px;
+
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+
+    --transition: 0.25s ease;
+
+    --font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(100%);
+}
+
+.container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 4;
+    transition: var(--transition);
+}
+
+.container.is-active{
+    transform: translateX(-100%);
+}
+
+.control-container{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 25px;
+}
+
+.close-btn{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.subject-name-container{
+    height: 125px;
+    width: 85%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: var(--radius-lg);
+    background: var(--gradient-primary);
+}
+
+.subject-img-container{
+    height: 95px;
+    width: 95px;
+    flex-shrink: 0;
+    background-color: var(--color-primary);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.subject-main-info-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    font-size: 25px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.paragraph-counter{
+    font-size: 15px;
+    color: var(--text-secondary);
+}
+
+.topic-list {
+    height: 100%;
+    width: 95%;
+    overflow-y: auto;
+    overflow-x: hidden; 
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--radius-md);
+    gap: 15px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.topic-list::-webkit-scrollbar{
+    display: none;
+}
+
+
+.topic-btn{
+    height: 80px;
+    width: 100%;
+    flex-shrink: 0;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: var(--radius-md);
+}
+
+.topic-id{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1d3c6e;
+    border-radius: 50px;
+    font-size: 25px;
+}
+
+.topic-info-container{
+    height: 60px;
+    padding-left: 20px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.topic{
+    font-size: 18px;
+}
+
+.time{
+    font-size: 15px;
+    color: var(--text-secondary);
+}
+
+.time::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    vertical-align: middle;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Ccircle cx='32' cy='32' r='23' stroke='black' stroke-width='3.5'/%3E%3Cpath d='M32 18V32L42 39' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Ccircle cx='32' cy='32' r='23' stroke='black' stroke-width='3.5'/%3E%3Cpath d='M32 18V32L42 39' stroke='black' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.open-btn{
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    flex-shrink: 0;
+    cursor: pointer;
+}

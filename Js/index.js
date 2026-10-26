@@ -1,24 +1,24 @@
-import changeForms from "./changeForms.js";
-import scroll from "./controlMenu.js";
-import { historyData, physicsData, geographyData, civicEducationData, lawData } from "./data.js";
-import fastGoTo from "./fastGoTo.js";
-import callFocusContainer from "./firstContainer.js";
-import openAndCloseList from "./list.js";
-import callFunctionNavigation from "./navigation.js";
-import openContainer from "./openContainer.js";
-import counter from "./paragraphCounter.js";
-import settingsFunction from "./settingsContainer.js";
-import text from "./text.js";
-import createElement from "./validetion.js";
+import animation from "./animation.js";
+import bgColor from "./bg.js";
+import callCloseContainer from "./closeContainer.js";
+import { civicEducationData, geographyData, historyData, lawData, physicsData } from "./data.js";
+import imgAltScript from "./imgAltScript.js";
+import createNote from "./note.js";
+import callOpenContainer from "./openContainer.js";
+import callParagraph from "./paragraph.js";
+import profile from "./profile.js";
+import callSearching from "./search.js";
+import switchContainer from "./switch.js";
+import callDataValidation from "./validation.js";
 
-openContainer()
-createElement(historyData, physicsData, geographyData, civicEducationData, lawData)
-callFunctionNavigation()
-callFocusContainer()
-text()
-changeForms()
-scroll()
-openAndCloseList()
-settingsFunction()
-counter(historyData, physicsData, geographyData, civicEducationData, lawData)
-fastGoTo()
+callDataValidation(historyData, physicsData, geographyData, civicEducationData, lawData)
+bgColor()
+callParagraph(historyData, physicsData, geographyData, civicEducationData, lawData)
+callOpenContainer()
+callCloseContainer()
+switchContainer()
+callSearching()
+createNote()
+profile()
+animation()
+imgAltScript()

@@ -1,76 +1,31 @@
-import check from "./checkingChangeForms.js";
-import subjectDashboard, { checkFocusBtn } from "./subjectDashboard.js";
+function openContainer(card){
+    if (!card) return;
 
-export default function openAndCloseContainer(){
-    document.addEventListener('DOMContentLoaded', () => {
-        const subjectHistory = document.querySelector('.history')
-        const subjectPhysics = document.querySelector('.physics')
-        const subjectGeography = document.querySelector('.geography')
-        const subjectCivicEducation = document.querySelector('.civicEducation')
-        const subjectLaw = document.querySelector('.law')
-
-        const historyContainer = document.querySelector('.history-container')
-        const physicsContainer = document.querySelector('.physics-container')
-        const geographyContainer = document.querySelector('.geography-container')
-        const civicEducationContainer = document.querySelector('.civicEducation-container')
-        const lawContainer = document.querySelector('.law-container')
-        const nav = document.querySelector('.nav')
-        const list = document.querySelectorAll('.list')
-        const settingsContainer = document.querySelector('.settings-container')
-        const wrapperList = document.querySelector('.wrapper-list')
-
-        const closeBtn = document.querySelectorAll('.close-btn')
-
-        if (!nav) return; 
-
-        subjectDashboard();
-
-        const containers = [historyContainer, physicsContainer, geographyContainer, civicEducationContainer, lawContainer];
-
-        function activateContainer(targetContainer) {
-            if (!targetContainer) return;
-            
-            containers.forEach(c => c?.classList.remove('is-active'));
-            targetContainer.classList.add('is-active');
-
-            check(targetContainer);
-            nav.classList.add('is-active');
-            
-            checkFocusBtn(targetContainer); 
-            wrapperList.classList.add('is-visible')
-        }
-
-        subjectHistory?.addEventListener('click', (event) => {
-            if (event.target === subjectHistory.querySelector('.paragraph-counter')) return
-            activateContainer(historyContainer)
-        })
-
-        subjectPhysics?.addEventListener('click', (event) => {
-            if (event.target === subjectPhysics.querySelector('.paragraph-counter')) return
-            activateContainer(physicsContainer)
-        })
-
-        subjectGeography?.addEventListener('click', (event) => {
-            if (event.target === subjectGeography.querySelector('.paragraph-counter')) return
-            activateContainer(geographyContainer)
-        })
-
-        subjectCivicEducation?.addEventListener('click', (event) => {
-            if (event.target === subjectCivicEducation.querySelector('.paragraph-counter')) return
-            activateContainer(civicEducationContainer)
-        })
+    card.addEventListener('click', () => {
+        const dataTrigger = card.dataset.subject;
+        const container = document.querySelector(`[data-subject="${dataTrigger}-container"]`);
+        const allContainer = document.querySelectorAll('.container')
+        const menu = document.querySelector('.menu')
         
-        subjectLaw?.addEventListener('click', (event) => {
-            if (event.target === subjectLaw.querySelector('.paragraph-counter')) return
-            activateContainer(lawContainer)
-        })
-
-        closeBtn.forEach(btn => btn.addEventListener('click', () => {
-            containers.forEach(c => c?.classList.remove('is-active'));
-            nav.classList.remove('is-active');
-            list.forEach(el => el?.classList.remove('is-active'));
-            settingsContainer?.classList.remove('is-active');
-            wrapperList?.classList.remove('is-visible');
-        }))
+        if (container) {
+            allContainer.forEach(el => el.classList.remove('is-active'))
+            container.classList.add('is-active');
+            menu.classList.add('is-disable')
+            document.querySelector('body').classList.add('is-lock')
+        }
     });
+}
+
+export default function callOpenContainer(){
+    const historySubjectCard = document.querySelector('[data-subject="history"]')
+    const physicsSubjectCard = document.querySelector('[data-subject="physics"]')
+    const geographySubjectCard = document.querySelector('[data-subject="geography"]')
+    const civicEducationSubjectCard = document.querySelector('[data-subject="civicEducation"]')
+    const lawSubjectCard = document.querySelector('[data-subject="law"]')
+    
+    openContainer(historySubjectCard)
+    openContainer(physicsSubjectCard)
+    openContainer(geographySubjectCard)
+    openContainer(civicEducationSubjectCard)
+    openContainer(lawSubjectCard)
 }
