@@ -27,7 +27,7 @@ function dataValidation(dataArray, currentContainer){
                         <span class="time">${item.readingTimeMin} хв. читання</span>
                     </div>
                     <button class="open-btn">
-                        <svg xmlns="http://w3.org" viewBox="0 0 64 64" fill="none" style="height: 30px; width: 30px; transform: rotate(180deg)">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" style="height: 30px; width: 30px; transform: rotate(180deg)">
                             <path d="M38 14 20 32 38 50" stroke="#f4f7ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </button>
@@ -49,7 +49,7 @@ function dataValidation(dataArray, currentContainer){
                 <div class="topic-container" style="padding-bottom: 10px">
                     <div class="control-container">
                         <button class="close-btn">
-                            <svg xmlns="http://w3.org" viewBox="0 0 64 64" fill="none" style="height: 40px; width: 40px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" style="height: 40px; width: 40px;">
                                 <path d="M38 14 20 32 38 50" stroke="#f4f7ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                         </button>
@@ -63,22 +63,23 @@ function dataValidation(dataArray, currentContainer){
                                 <div class="current-paragraph">Параграф: ${activeItem.id}</div>
                                 <div class="current-time">${activeItem.readingTimeMin} хв. читання</div>
                                 <button class="toSaved">
-                                    <svg xmlns="http://w3.org" viewBox="0 0 64 64" class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="icon">
                                         <path d="M19 9H45C47.2 9 49 10.8 49 13V56L32 44 15 56V13C15 10.8 16.8 9 19 9Z" fill="currentColor"/>
                                         <path d="M23 19H41M23 26H41" stroke="#10264a" stroke-width="2.5" stroke-linecap="round"/>
                                     </svg>
                                 </button>
                         </div>
                         <p class="title">${activeItem.title}</p>
-                        <div class="main-content">
-                            <svg xmlns="http://w3.org" viewBox="0 0 64 64" fill="none" style="align-self: flex-start; height: 40px; width: 40px; color: yellow; flex-shrink: 0;">
+                        <!-- Добавлено white-space: pre-line для сохранения переносов строк и отступов -->
+                        <div class="main-content" style="display: flex; align-items: flex-start; gap: 10px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" style="align-self: flex-start; height: 40px; width: 40px; color: yellow; flex-shrink: 0;">
                                 <path d="M22 43C20 39 14 34 14 25C14 15.1 22.1 7 32 7S50 15.1 50 25C50 34 44 39 42 43H22Z" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M23 43H41M24 50H40M28 56H36" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
                                 <path d="M25 27L30 32L39 22" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span>${activeItem.mainContent}</span>
+                            <span style="white-space: pre-line;">${activeItem.mainContent}</span>
                         </div>
-                        <div class="secondary-content">${activeItem.secondaryContent}</div>
+                        <div class="secondary-content" style="white-space: pre-line;">${activeItem.secondaryContent}</div>
                         <div class="button-container">
                             <button class="prev-page">Попередня</button>
                             <button class="next-page">Далі</button>

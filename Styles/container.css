@@ -96,6 +96,7 @@
 .current-paragraph, .current-time, .toSaved{
     height: auto;
     width: auto;
+    flex-shrink: 0;
     padding: 5px 10px;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
